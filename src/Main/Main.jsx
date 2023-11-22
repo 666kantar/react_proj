@@ -11,7 +11,6 @@ import data from "../data.js";
 import { Outlet } from "react-router-dom";
 
 function Main() {
-
   const { products } = data;
   const [cartItems, setCartItems] = useState([]);
   const onAdd = (product) => {
@@ -39,7 +38,6 @@ function Main() {
     }
   };
 
-
   return (
     <>
       {/* 
@@ -47,9 +45,9 @@ function Main() {
       <Nav cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} /> */}
       <Slider />
       <ScrollToTop />
-      <Nav cartItems={cartItems} onAdd={onAdd}/>
-      {/* <Outlet /> */}
-      <MainPage products={products} onAdd={onAdd} />
+      <Nav cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} />
+      <Outlet />
+      {/* <MainPage products={products} onAdd={onAdd} /> */}
 
       <Footer />
     </>
