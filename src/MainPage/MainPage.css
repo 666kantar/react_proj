@@ -1,0 +1,247 @@
+ 
+   /*Main Bot*/
+
+    .main {
+        background: url("https://images.freecreatives.com/wp-content/uploads/2015/04/14573-dark-wood-1680x1050-abstract-wallpaper1.jpg");
+    
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 90%);
+    
+    
+        background-repeat: no-repeat;
+        background-size: cover;        
+    }
+        .slider{
+            display: flex;
+            width: 300vw;
+            transition: all 1.5s ease-in-out;
+        }
+    
+            .mainItem {
+                width: 100%;
+                display: flex;
+                align-items: flex-start;
+                justify-content: center;
+                flex-wrap: wrap;
+                position: relative;
+            }
+    
+                .mainPrice {
+                    margin: 0.6em 0 1em 0;
+                    font-size: 4em;
+                    font-weight: 300;
+                    text-align: center;
+                    color: white;
+                    border: 1px solid gray;
+                    z-index: 1;
+                }
+    
+    
+                .mainImgBg{
+                    height: 40em;
+                    width: 40em;
+                    max-width: 95vw;
+                    max-height: 95vw;
+                    border-radius: 50%;
+                    transform: rotate(9deg);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    overflow: visible;
+                    position: relative;
+                }
+    
+                    .mainImg {
+                        z-index: 1;
+                        position: absolute;
+                        width: 50em;
+                        max-width: 95vw;
+                        filter: drop-shadow(21px 16px 23px black) invert(0%);
+                    } 
+    
+                .mainBuy{
+                    margin: 2em 1em 5em 4em;
+                    display: flex;
+                    flex-direction: column;
+                    text-align: center;
+                    z-index: 1;
+    
+                }
+                    .mainTitle {            
+                        font-size: 60px;
+                        font-weight: 900;
+                        text-align: center;
+                        color: white;
+                        line-height: 1.5em;
+                    }
+                    .buyButton {
+                        font-size: 40px;
+                        font-weight: 900;
+                        color: white;
+                        border: 1px solid gray;
+                        background-color: black;
+                        cursor: pointer;
+                    }
+                    .buyButton:hover {
+                        background-color: white;
+                        color: hsl(348 80% 19% / 1);
+                    }
+            
+    
+                    .mainItem:nth-child(1) .mainImgBg{
+                        background-color: #185c5f;
+                    }
+    
+                    .mainItem:nth-child(2) .mainImgBg{
+                        background-color: rebeccapurple;
+                    }
+    
+                    .mainItem:nth-child(3) .mainImgBg{
+                        background-color: cornflowerblue;
+                    }
+                    
+                    .mainItem:nth-child(1) .mainPrice{
+                        color: #185c5f;
+                    }
+                    
+                    .mainItem:nth-child(2) .mainPrice{
+                        color: rebeccapurple;
+                    }
+                    
+                    .mainItem:nth-child(3) .mainPrice{
+                        color: cornflowerblue;
+                    }
+    
+
+    /* InfoBlock */
+    .infoBlock {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 50px;
+        }
+        
+        .info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        }
+        
+        .infoIcon {
+        width: 50px;
+        height: 50px;
+        }
+        
+        .infoTitle {
+        font-size: 20px;
+        font-weight: 600;
+        margin: 20px;
+        }
+        
+        .infoDesc {
+        color: gray;
+        width: 50%;
+        height: 100px;
+        }
+
+        
+        /*Main Bot*/
+
+        .product {
+            background-color: whitesmoke;
+            position: relative;
+            clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+        }
+            
+            .productItem{
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                flex-wrap: nowrap;
+                position: relative;
+            }
+          
+          
+            .productImg {
+                width: 60vw;
+            }
+        
+            .productDetails {
+                padding: 50px;
+            }
+        
+            .productTitle {
+                text-transform: uppercase ;
+                font-size: 5em;
+                font-weight: 900;
+            }
+        
+            .productDesc {
+                font-style: 1em;
+                color: gray;
+            }
+        
+        
+            .productButton {
+                float: right;
+                padding: 10px 20px;
+                background-color: black;
+                color: white;
+                font-weight: 600;
+                cursor: pointer;
+            }
+        
+            .productButton:hover {
+                background-color: white;
+                color: black;
+            }
+            .product {
+                background-color: whitesmoke;
+                position: relative;
+                clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+            }
+                
+                .productItem{
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    flex-wrap: nowrap;
+                    position: relative;
+                }
+              
+              
+                .productImg {
+                    width: 60vw;
+                }
+            
+                .productDetails {
+                    padding: 50px;
+                }
+            
+                .productTitle {
+                    font-size: 5em;
+                    font-weight: 900;
+                }
+            
+                .productDesc {
+                    font-style: 1em;
+                    color: gray;
+                }
+            
+            
+                .productButton {
+                    float: right;
+                    padding: 10px 20px;
+                    background-color: black;
+                    color: white;
+                    font-weight: 600;
+                    cursor: pointer;
+                }
+            
+                .productButton:hover {
+                    background-color: white;
+                    color: black;
+                }
+                    

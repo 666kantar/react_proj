@@ -1,0 +1,15 @@
+.text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2% 30%;
+}
+
+h1{
+    font-size: 8rem;
+    margin: 5% 3%;
+}
+
+a{
+    text-decoration: none;
+}

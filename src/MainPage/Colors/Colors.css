@@ -1,0 +1,32 @@
+.colors {
+  display: flex;
+  margin-bottom: 1em;
+}
+
+.color {
+  width: 2em;
+  height: 2em;
+  border-radius: 5px;
+  margin-right: 0.7em;
+  cursor: pointer;
+}
+
+.color:nth-child(1) {
+  background-color: white;
+  border: rgb(219, 218, 218) 1px solid;
+}
+
+.color:nth-child(2) {
+  background-color: blue;
+  border: rgb(219, 218, 218) 1px solid;
+}
+
+.color:nth-child(3) {
+  background-color: red;
+  border: rgb(219, 218, 218) 1px solid;
+}
+
+.color:nth-child(4) {
+  background-color: black;
+  border: rgb(219, 218, 218) 1px solid;
+}

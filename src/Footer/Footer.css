@@ -1,0 +1,55 @@
+footer {
+    display: flex;
+    }
+    
+    .footerLeft {
+    flex: auto;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 50px;
+    }
+    
+    .fMenuTitle {
+    font-size: 16px;
+    }
+    
+    .fList {
+    padding: 0;
+    list-style: none;
+    }
+    
+    .flItem, .flsItem{
+    margin-bottom: 10px;
+    color: gray;
+    cursor: pointer;
+    }
+    
+    .footerRight {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    }
+    
+    .fInput {
+    padding: 5px;
+    }
+    
+    .fButton {
+    padding: 5px;
+    background-color: black;
+    color: white;
+    }
+    
+
+    
+    .copyright{
+    font-weight: 300;
+    font-size: 14px;
+    }
+
+    li a {
+        color: gray;
+        text-decoration: none;
+    }
