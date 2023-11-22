@@ -6,6 +6,10 @@ import YourColors from "./Colors/YourColors";
 
 function MainPage(props) {
   const { products, onAdd } = props;
+
+
+
+  
   return (
     <>
       {/* MainTop */}

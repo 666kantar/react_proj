@@ -40,14 +40,11 @@ function Main() {
 
   return (
     <>
-      {/* 
-      
-      <Nav cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} /> */}
       <Slider />
       <ScrollToTop />
       <Nav cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} />
-      <Outlet />
-      {/* <MainPage products={products} onAdd={onAdd} /> */}
+      {/* <Outlet /> */}
+      <MainPage products={products} onAdd={onAdd} />
 
       <Footer />
     </>
