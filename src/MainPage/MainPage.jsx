@@ -3,9 +3,11 @@ import "./MainPage.css";
 import ClasicColors from "./Colors/ClasicColors";
 import MagicColors from "./Colors/MagicColors";
 import YourColors from "./Colors/YourColors";
+import { useOutletContext } from "react-router-dom";
 
 function MainPage(props) {
-  const { products, onAdd } = props;
+  const [products, onAdd]=useOutletContext();
+  // const { products, onAdd } = props;
 
 
 
