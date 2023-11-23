@@ -41,7 +41,7 @@ function Main() {
     <>
       <Slider />
       <Nav cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} />
-      <Outlet context={[products, onAdd]}/>
+      <Outlet context={[products, onAdd]} />
       <ScrollToTop />
       <Footer />
     </>
