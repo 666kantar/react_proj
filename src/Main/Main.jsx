@@ -43,7 +43,6 @@ function Main() {
       <ScrollToTop />
       <Nav cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} />
       <Outlet context={[products, onAdd]}/>
-      {/* <MainPage products={products} onAdd={onAdd} /> */}
 
       <Footer />
     </>
