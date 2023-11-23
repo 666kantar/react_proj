@@ -40,10 +40,9 @@ function Main() {
   return (
     <>
       <Slider />
-      <ScrollToTop />
       <Nav cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} />
       <Outlet context={[products, onAdd]}/>
-
+      <ScrollToTop />
       <Footer />
     </>
   );
