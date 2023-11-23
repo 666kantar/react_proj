@@ -3,7 +3,6 @@ import "./Main.css";
 
 import Slider from "../Slider.js";
 
-import MainPage from "../MainPage/MainPage.jsx";
 import Footer from "../Footer/Footer.jsx";
 import Nav from "../Nav/Nav.jsx";
 import ScrollToTop from "../ScrollToTop";

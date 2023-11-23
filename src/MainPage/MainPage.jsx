@@ -7,8 +7,6 @@ import { useOutletContext } from "react-router-dom";
 
 function MainPage(props) {
   const [products, onAdd]=useOutletContext();
-  // const { products, onAdd } = props;
-
 
 
   

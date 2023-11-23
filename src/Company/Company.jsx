@@ -1,8 +1,5 @@
-import Nav from "../Nav/Nav";
-import Footer from "../Footer/Footer"
 import './Company.css'
 import React, { useEffect } from 'react';
-import ScrollToTop from "../ScrollToTop";
 
 
 
