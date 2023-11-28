@@ -8,7 +8,8 @@
     
     
         background-repeat: no-repeat;
-        background-size: cover;        
+        background-size: cover;    
+        margin-top: -0.5px;    
     }
         .slider{
             display: flex;
