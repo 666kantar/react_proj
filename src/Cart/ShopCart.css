@@ -20,5 +20,34 @@
 
 
 .basket{
-    color: black
+    color: black;
+    padding: 0 1em;    
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.2em;
+    
+}
+
+.basketFlex{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.col-2.text-right{
+    
+    flex: auto;
+    text-align: right;
+    
+    
+}
+
+.imgCol{
+    width: 1rem;
+    flex: 1;
 }

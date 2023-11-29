@@ -20,7 +20,7 @@ function MainPage(props) {
               <h2 className="mainPrice">C$ {products[0].price}</h2>
             </div>
             <div className="mainImgBg">
-              <img src={"/img/" + products[0].img} alt="" className="mainImg" />
+              <img src={products[0].img} alt="" className="mainImg" />
             </div>
             <div className="mainBuy">
               <h1 className="mainTitle">
@@ -39,7 +39,7 @@ function MainPage(props) {
               <h2 className="mainPrice">C$ {products[1].price}</h2>
             </div>
             <div className="mainImgBg">
-              <img src={"/img/" + products[1].img} alt="" className="mainImg" />
+              <img src={products[1].img} alt="" className="mainImg" />
             </div>
             <div className="mainBuy">
               <h1 className="mainTitle">
@@ -58,7 +58,7 @@ function MainPage(props) {
               <h2 className="mainPrice">C$ {products[2].price}</h2>
             </div>
             <div className="mainImgBg">
-              <img src={"/img/" + products[2].img} alt="" className="mainImg" />
+              <img src={products[2].img} alt="" className="mainImg" />
             </div>
             <div className="mainBuy">
               <h1 className="mainTitle">
@@ -110,7 +110,7 @@ function MainPage(props) {
         <div className="slider">
           <div className="productItem">
             <img
-              src={"/img/" + products[0].img}
+              src={products[0].img}
               alt=""
               className="productImg"
             />
@@ -125,7 +125,7 @@ function MainPage(props) {
           </div>
           <div className="productItem">
             <img
-              src={"/img/" + products[1].img}
+              src={products[1].img}
               alt=""
               className="productImg"
             />
@@ -142,7 +142,7 @@ function MainPage(props) {
 
           <div className="productItem">
             <img
-              src={"/img/" + products[2].img}
+              src={products[2].img}
               alt=""
               className="productImg"
             />

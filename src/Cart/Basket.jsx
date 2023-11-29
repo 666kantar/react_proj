@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 export default function Basket(props) {
   const { cartItems, onAdd, onRemove } = props;
@@ -11,15 +11,18 @@ export default function Basket(props) {
       <div>
         {cartItems.length === 0 && <div>Cart is empty</div>}
         {cartItems.map((item) => (
-          <div key={item.id} className="row">
-            <div className="col-2">{item.title}</div>
-            <div className="col-2">
-              <button onClick={() => onRemove(item)} className="remove">
-                -
-              </button>{' '}
-              <button onClick={() => onAdd(item)} className="add">
-                +
-              </button>
+          <div key={item.id} al className="row">
+            <img src={item.img} className="imgCol" alt="" />
+            <div className="basketFlex">
+              <div className="col-2">{item.title}</div>
+              <div className="col-2">
+                <button onClick={() => onRemove(item)} className="remove">
+                  -
+                </button>{" "}
+                <button onClick={() => onAdd(item)} className="add">
+                  +
+                </button>
+              </div>
             </div>
 
             <div className="col-2 text-right">
@@ -40,7 +43,6 @@ export default function Basket(props) {
               <div className="col-1 text-right">${taxPrice.toFixed(2)}</div>
             </div>
 
-
             <div className="row">
               <div className="col-2">
                 <strong>Total Price</strong>
@@ -51,7 +53,7 @@ export default function Basket(props) {
             </div>
             <hr />
             <div className="row">
-              <button onClick={() => alert('Implement Checkout!')}>
+              <button onClick={() => alert("Implement Checkout!")}>
                 Checkout
               </button>
             </div>
