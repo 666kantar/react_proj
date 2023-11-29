@@ -8,6 +8,7 @@ import MainPage from "./MainPage/MainPage";
 import Company from "./Company/Company"
 import Main from "./Main/Main";
 import ErrorPage from "./Error/Error";
+import Account from './Account/Account'
   
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -15,6 +16,7 @@ import ErrorPage from "./Error/Error";
         <Route index element={<MainPage />} />
         <Route path="/company" element={<Company />} />
         <Route path="*" element={<ErrorPage />} />
+        <Route path="/account" element={<Account />} />
       </Route>
        
     )

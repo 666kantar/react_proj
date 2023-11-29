@@ -1,8 +1,4 @@
 import React, { useEffect } from 'react';
-import ScrollToTop from "../ScrollToTop";
-
-import Nav from "../Nav/Nav";
-import Footer from "../Footer/Footer"
 
 import './Account.css'
 
@@ -11,7 +7,7 @@ import './Account.css'
 function Account() {
 
     useEffect(() => {
-        document.title = "MMD Account";
+        document.title = "MMD Authorization";
          return () => {
             document.title = "Maple Mug Dreams";
         };
@@ -21,15 +17,11 @@ function Account() {
     return (
         
     <>
-    <ScrollToTop />
-    <Nav />
-  
-   
-        <Footer />
+        
     </>
   
   
   );
 }
 
-export default Account;
+export default Account; 
