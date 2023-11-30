@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 import "./Nav.css"
 import ShopCart from "../Cart/ShopCart";
+import Slider from "../Slider"
 
 
 function Nav(props) {
@@ -11,7 +12,7 @@ function Nav(props) {
     const { cartItems, onAdd, onRemove } = props;
 
     let [cartOpen, setCartOpen] = useState(false)
-
+   
 
     return (
     <>
@@ -35,7 +36,8 @@ function Nav(props) {
         )}
 
         </div>
-        
+
+        {isHomePage && <Slider />}
         {isHomePage ? null : <style>{'.navMenu {display: none;}'}</style>}
     </>
     )}

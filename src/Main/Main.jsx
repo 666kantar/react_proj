@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import "./Main.css";
 
-import Slider from "../Slider.js";
-
 import Footer from "../Footer/Footer.jsx";
 import Nav from "../Nav/Nav.jsx";
 import ScrollToTop from "../ScrollToTop";
@@ -39,7 +37,6 @@ function Main() {
 
   return (
     <>
-      <Slider />
       <Nav cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} />
       <Outlet context={[products, onAdd]} />
       <ScrollToTop />
