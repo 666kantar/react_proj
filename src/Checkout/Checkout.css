@@ -1,0 +1,88 @@
+.bodyCheck{
+    background-color: whitesmoke;
+}
+
+.checkPage{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.formCheck{
+    margin:  3rem;
+
+    /* border: solid 2px lightgray; */
+    width: 60vw;
+    text-align: center;
+    background-color: white;
+    border-radius: 20px 20px 40px 40px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+}
+
+.formCheck h1{
+    padding: 1rem 0;
+    font-size: 3rem;
+    /* background-color: whitesmoke; */
+    /* border-bottom: 2px solid lightgray; */
+ 
+}
+
+.formFlex{
+    margin: 2rem;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+   
+}
+.formgroup{
+    flex: 0 0 40%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    margin: 0;
+}
+
+.formgroup-2{
+    flex: 0 0 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    margin: 0;
+}
+
+.form-control{
+    margin-top: 1em;
+    width: 100%;
+    min-height: 2rem;
+    border-radius: 4px;
+    border-color: lightgray;
+
+}
+
+.form-control-2{
+    border-radius: 4px;
+    margin-top: 1em;
+    border-color: lightgray;
+    width: 100%;
+    min-height: 3rem;
+}
+
+
+
+.endBut{
+    background-color: black;
+    color: white;
+    text-transform: uppercase;
+    min-height: 3em;
+    width: 100%;
+    font-size: 1.6em;
+    border-radius: 40px;
+    
+}

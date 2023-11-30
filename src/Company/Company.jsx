@@ -63,7 +63,7 @@ function MainPage() {
 {/* MainBot */}
     <div className="aboutUs">
         <img className="descImg" src='./img/aboutUs.png' alt=""/>
-        <div class="vertical-line"></div>
+        <div className="vertical-line"></div>
         <div className="description">
             <p>
                 Welcome to Maple Mug Dreams, your go-to destination for exquisite sublimation mugs that blend style and functionality seamlessly. As a company passionate about delivering quality and uniqueness, we take pride in our mugs that transcend the ordinary.

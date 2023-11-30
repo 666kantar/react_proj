@@ -51,3 +51,22 @@
     width: 1rem;
     flex: 1;
 }
+
+.checkoutCart{
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+  border: solid black 2px;
+  text-transform: uppercase;;
+  border-radius: 10px;
+  
+} 
+
+
+.checkoutCart:hover{
+    background-color: white;
+                color: black;
+       
+}

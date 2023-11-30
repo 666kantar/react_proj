@@ -36,7 +36,7 @@ function Account() {
               id="password"
               size="30"
               placeholder="password"
-              maxlength="8"
+              maxLength="8"
               required
             />            
           </div>

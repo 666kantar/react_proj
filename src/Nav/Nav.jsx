@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import "./Nav.css"
 import ShopCart from "../Cart/ShopCart";
@@ -10,9 +10,27 @@ function Nav(props) {
     const location = useLocation();
     const isHomePage = location.pathname === '/';
     const { cartItems, onAdd, onRemove } = props;
+    const isCheckoutPage = location.pathname === '/checkout' || location.pathname === '/checkout_cart';
+
+    
 
     let [cartOpen, setCartOpen] = useState(false)
    
+    useEffect(() => {
+        if (isCheckoutPage) {
+            setCartOpen(false);
+            document.body.classList.remove('overflow-hidden');
+        } else {
+            document.body.classList.toggle('overflow-hidden', cartOpen);
+        }
+    }, [location.pathname, isCheckoutPage, cartOpen]);
+
+    const closeCart = () => {
+        setCartOpen(false);
+        document.body.classList.remove('overflow-hidden');
+    };
+
+
 
     return (
     <>
@@ -29,6 +47,9 @@ function Nav(props) {
 
         <img src='./img/basket.png' alt="basket" onClick={() => setCartOpen(cartOpen = !cartOpen)} className={`shopCartButton ${cartOpen && 'active'}`}/> 
         
+        {cartOpen && <div className="overlay" onClick={closeCart}></div>}
+
+
         {cartOpen &&(
             <ShopCart cartItems={cartItems}
             onAdd={onAdd}
@@ -39,6 +60,9 @@ function Nav(props) {
 
         {isHomePage && <Slider />}
         {isHomePage ? null : <style>{'.navMenu {display: none;}'}</style>}
+
+
+        {isCheckoutPage && <style>{'.shopCartButton {display: none;}'}</style>}
     </>
     )}
     export default Nav;

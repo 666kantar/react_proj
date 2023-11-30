@@ -1,17 +1,21 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Basket(props) {
-  const { cartItems, onAdd, onRemove } = props;
+  const { cartItems, onAdd, onRemove} = props;
   const itemsPrice = cartItems.reduce((a, c) => a + c.qty * c.price, 0);
   // const taxPrice = itemsPrice * 0.14;
   const totalPrice = itemsPrice //+ taxPrice;
+
+
+  
   return (
     <>
       <h2>Cart Items</h2>
       <div>
         {cartItems.length === 0 && <div>Cart is empty</div>}
         {cartItems.map((item) => (
-          <div key={item.id} al className="row">
+          <div key={item.id} alt="" className="row">
             <img src={item.img} className="imgCol" alt="" />
             <div className="basketFlex">
               <div className="col-2">{item.title}</div>
@@ -53,9 +57,11 @@ export default function Basket(props) {
             </div>
             <hr />
             <div className="row">
-              <button onClick={() => alert("Implement Checkout!")}>
+              <Link to='/checkout_cart' className="checkoutCart">
                 Checkout
-              </button>
+              </Link>
+              
+   
             </div>
           </>
         )}

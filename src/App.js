@@ -9,6 +9,8 @@ import Company from "./Company/Company"
 import Main from "./Main/Main";
 import ErrorPage from "./Error/Error";
 import Account from './Account/Account'
+import Checkout from "./Checkout/Checkout";
+import CheckoutCart from "./Checkout/CheckoutCart";
   
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -17,6 +19,8 @@ import Account from './Account/Account'
         <Route path="/company" element={<Company />} />
         <Route path="*" element={<ErrorPage />} />
         <Route path="/account" element={<Account />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/checkout_cart" element={<CheckoutCart />} />
       </Route>
        
     )
