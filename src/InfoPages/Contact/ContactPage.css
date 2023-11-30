@@ -1,0 +1,62 @@
+.formContact{
+    margin:  2rem;
+    width: 60vw;
+    text-align: center;
+    background-color: white;
+    border-radius: 20px 20px 40px 40px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+}
+
+.formContact h1{
+    padding: 1rem 0;
+    font-size: 3rem;
+    margin: 0.5em 0; 
+}
+
+.contactFormFlex{
+    display: flex;
+    flex-direction: column;
+    }
+
+.contactForm{
+    display: flex;
+    flex-direction: column;
+    margin: 2em;
+    align-items: flex-start;
+    max-width: 100%;
+    margin-top: 0;
+
+}
+
+label{
+    margin-bottom: 0.5rem;
+}
+
+.contactEmail{
+    width: 95%;
+    padding: 1em;
+
+}
+
+
+.contactText{
+    width: 95%;
+    padding: 1em;
+    min-height: 10rem;
+}
+
+.endButC{    
+    background-color: black;
+    color: white;
+    text-transform: uppercase;
+    min-height: 3em;
+    width: 100%;
+    font-size: 1.6em;
+    border-radius: 40px;
+    border: none;
+}
+
+.endButC:hover{
+    background-color: gray;
+    color: black;
+}

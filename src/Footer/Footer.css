@@ -25,7 +25,7 @@ footer {
     }
     
     .footerRight {
-    
+        align-self: flex-end;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -45,6 +45,7 @@ footer {
 
     
     .copyright{
+  
     font-weight: 300;
     font-size: 14px;
     }
