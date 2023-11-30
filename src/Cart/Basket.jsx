@@ -3,8 +3,8 @@ import React from "react";
 export default function Basket(props) {
   const { cartItems, onAdd, onRemove } = props;
   const itemsPrice = cartItems.reduce((a, c) => a + c.qty * c.price, 0);
-  const taxPrice = itemsPrice * 0.14;
-  const totalPrice = itemsPrice + taxPrice;
+  // const taxPrice = itemsPrice * 0.14;
+  const totalPrice = itemsPrice //+ taxPrice;
   return (
     <>
       <h2>Cart Items</h2>
@@ -34,14 +34,14 @@ export default function Basket(props) {
         {cartItems.length !== 0 && (
           <>
             <hr></hr>
-            <div className="row">
+            {/* <div className="row">
               <div className="col-2">Items Price</div>
               <div className="col-1 text-right">${itemsPrice.toFixed(2)}</div>
-            </div>
-            <div className="row">
+            </div> */}
+            {/* <div className="row">
               <div className="col-2">Tax Price</div>
               <div className="col-1 text-right">${taxPrice.toFixed(2)}</div>
-            </div>
+            </div> */}
 
             <div className="row">
               <div className="col-2">

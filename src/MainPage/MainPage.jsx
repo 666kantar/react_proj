@@ -1,9 +1,20 @@
 import "./MainPage.css";
 
-import ClasicColors from "./Colors/ClasicColors";
-import MagicColors from "./Colors/MagicColors";
-import YourColors from "./Colors/YourColors";
+// import ClasicColors from "./Colors/ClasicColors";
+// import MagicColors from "./Colors/MagicColors";
+// import YourColors from "./Colors/YourColors";
+
+
+//face colors
+import ClasicColors from "./noColors";
+import MagicColors from "./noColors";
+import YourColors from "./noColors";
+
+
+
+
 import { useOutletContext } from "react-router-dom";
+
 
 function MainPage(props) {
   const [products, onAdd]=useOutletContext();
