@@ -13,6 +13,7 @@ import ErrorPage from "./Error/Error";
 import Account from './Account/Account'
 import Checkout from "./Checkout/Checkout2/Checkout";
 import CheckoutCart from "./Checkout/CheckoutCart";
+import Registration from "./Account/Registration/Registration"
 
   
   const router = createBrowserRouter(
@@ -26,6 +27,7 @@ import CheckoutCart from "./Checkout/CheckoutCart";
 
         <Route path="*" element={<ErrorPage />} />
         <Route path="/account" element={<Account />} />
+        <Route path="/registration" element={<Registration />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/checkout_cart" element={<CheckoutCart />} />
       </Route>
