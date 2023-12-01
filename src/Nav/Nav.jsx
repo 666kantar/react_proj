@@ -9,7 +9,7 @@ import Slider from "../Slider"
 function Nav(props) {
     const location = useLocation();
     const isHomePage = location.pathname === '/';
-    const { cartItems, onAdd, onRemove } = props;
+    const { cartItems, onAdd, onRemove,  totalPrice, setTotalPrice} = props;
     const isCheckoutPage = location.pathname === '/checkout' || location.pathname === '/checkout_cart';
 
     
@@ -30,7 +30,7 @@ function Nav(props) {
         document.body.classList.remove('overflow-hidden');
     };
 
-
+    // console.log('nav cartItems', cartItems)
 
     return (
     <>
@@ -53,7 +53,9 @@ function Nav(props) {
         {cartOpen &&(
             <ShopCart cartItems={cartItems}
             onAdd={onAdd}
-            onRemove={onRemove}/>
+            onRemove={onRemove}
+            totalPrice={totalPrice} 
+            setTotalPrice={setTotalPrice}/>
         )}
 
         </div>

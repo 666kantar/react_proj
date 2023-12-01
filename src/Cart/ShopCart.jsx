@@ -5,14 +5,16 @@ import Basket from "./Basket";
 
 function ShopCart (props) {
 
-  const { cartItems, onAdd, onRemove } = props;
-
+  const { cartItems, onAdd, onRemove, totalPrice, setTotalPrice} = props;
+  // console.log('ShopCart cartItems', cartItems)
   return (
     <div className="shopCart">
       <div className="basket">
       <Basket cartItems={cartItems}
             onAdd={onAdd}
-            onRemove={onRemove} />
+            onRemove={onRemove} 
+            totalPrice={totalPrice} 
+            setTotalPrice={setTotalPrice}/>
       </div>
       <div className="footerCart">
         <Link to="/account">Sign in</Link>

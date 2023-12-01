@@ -35,10 +35,13 @@ function Main() {
     }
   };
 
+  let [totalPrice, setTotalPrice] = useState(0);
+
+// console.log('empty cart items', cartItems);
   return (
     <>
-      <Nav cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} />
-      <Outlet context={[products, onAdd]} />
+      <Nav cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} totalPrice={totalPrice} setTotalPrice={setTotalPrice} />
+      <Outlet context={[products, onAdd, cartItems, totalPrice, setTotalPrice]} />
       <ScrollToTop />
       <Footer />
     </>

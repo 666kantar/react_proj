@@ -1,13 +1,15 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { Link } from "react-router-dom";
 
 export default function Basket(props) {
-  const { cartItems, onAdd, onRemove} = props;
+  const { cartItems, onAdd, onRemove, totalPrice, setTotalPrice} = props;
   const itemsPrice = cartItems.reduce((a, c) => a + c.qty * c.price, 0);
   // const taxPrice = itemsPrice * 0.14;
-  const totalPrice = itemsPrice //+ taxPrice;
+ useEffect(()=>{
+  setTotalPrice(itemsPrice);
+ }); //+ taxPrice;
 
-
+// console.log('basket CartItems', cartItems)
   
   return (
     <>
