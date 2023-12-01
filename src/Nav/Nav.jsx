@@ -30,7 +30,6 @@ function Nav(props) {
         document.body.classList.remove('overflow-hidden');
     };
 
-    // console.log('nav cartItems', cartItems)
 
     return (
     <>

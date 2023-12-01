@@ -6,7 +6,7 @@ import Basket from "./Basket";
 function ShopCart (props) {
 
   const { cartItems, onAdd, onRemove, totalPrice, setTotalPrice} = props;
-  // console.log('ShopCart cartItems', cartItems)
+ 
   return (
     <div className="shopCart">
       <div className="basket">

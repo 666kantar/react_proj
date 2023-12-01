@@ -8,8 +8,6 @@ export default function Basket(props) {
  useEffect(()=>{
   setTotalPrice(itemsPrice);
  }); //+ taxPrice;
-
-// console.log('basket CartItems', cartItems)
   
   return (
     <>
