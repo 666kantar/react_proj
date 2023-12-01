@@ -29,7 +29,7 @@ export default function CheckoutCart(props) {
                   </div>
                 </div>
 
-                <div className="col-2 text-right">
+                <div className="col-2 text-right" style={{ fontSize: "1.6rem" }} >
                   {item.qty} x ${item.price.toFixed(2)}
                 </div>
               </div>
