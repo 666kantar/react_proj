@@ -11,7 +11,7 @@ import ContactPage from "./InfoPages/Contact/ContactPage";
 import Main from "./Main/Main";
 import ErrorPage from "./Error/Error";
 import Account from './Account/Account'
-import Checkout from "./Checkout/Checkout";
+import Checkout from "./Checkout/Checkout2/Checkout";
 import CheckoutCart from "./Checkout/CheckoutCart";
 
   

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Main.css";
 
 import Footer from "../Footer/Footer.jsx";
@@ -10,6 +10,8 @@ import { Outlet } from "react-router-dom";
 function Main() {
   const { products } = data;
   const [cartItems, setCartItems] = useState([]);
+  const itemsPrice = cartItems.reduce((a, c) => a + c.qty * c.price, 0);
+  const [totalPrice, setTotalPrice] = useState(0);
   const onAdd = (product) => {
     const exist = cartItems.find((x) => x.id === product.id);
     if (exist) {
@@ -35,12 +37,16 @@ function Main() {
     }
   };
 
-  let [totalPrice, setTotalPrice] = useState(0);
+  
+  useEffect(() => {
+    setTotalPrice(itemsPrice);
+  }, [itemsPrice]);
+
 
   return (
     <>
-      <Nav cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} totalPrice={totalPrice} setTotalPrice={setTotalPrice} />
-      <Outlet context={[products, onAdd, cartItems, totalPrice, setTotalPrice]} />
+      <Nav cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} totalPrice={totalPrice}/>
+      <Outlet context={[products, onAdd, cartItems, totalPrice, onRemove]} />
       <ScrollToTop />
       <Footer />
     </>

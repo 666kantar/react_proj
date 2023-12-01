@@ -9,7 +9,7 @@ import Slider from "../Slider"
 function Nav(props) {
     const location = useLocation();
     const isHomePage = location.pathname === '/';
-    const { cartItems, onAdd, onRemove,  totalPrice, setTotalPrice} = props;
+    const { cartItems, onAdd, onRemove,  totalPrice} = props;
     const isCheckoutPage = location.pathname === '/checkout' || location.pathname === '/checkout_cart';
 
     
@@ -53,8 +53,7 @@ function Nav(props) {
             <ShopCart cartItems={cartItems}
             onAdd={onAdd}
             onRemove={onRemove}
-            totalPrice={totalPrice} 
-            setTotalPrice={setTotalPrice}/>
+            totalPrice={totalPrice} />
         )}
 
         </div>

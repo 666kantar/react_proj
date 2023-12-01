@@ -9,6 +9,8 @@ export default function Checkout() {
       
         <div className="formCheck">
         <h1>Delivery informaiton</h1>
+
+        <form action="/#" method="GET">
           <div className="formFlex">
             <div className="formgroup">
               <input type="text" name="firstName" className="form-control" placeholder="First name" />
@@ -57,9 +59,10 @@ export default function Checkout() {
             
           </div>
 
-          <button type="button" className="endBut">
+          <button type="submit" className="endBut">
             Place Order
           </button>
+          </form>
         </div>
 
 

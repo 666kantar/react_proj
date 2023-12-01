@@ -1,32 +1,62 @@
 import React from "react";
-import "./Checkout.css";
-import { useOutletContext } from "react-router-dom";
+import { useOutletContext, Link } from "react-router-dom";
+import "./CheckoutCart.css";
 
 export default function CheckoutCart(props) {
-  const [products, onAdd, cartItems, totalPrice]=useOutletContext();
+  const [, onAdd, cartItems, totalPrice, onRemove] = useOutletContext();
 
   return (
     <div className="bodyCheck">
       <div className="checkPage">
-      
-        <div className="formCheck">
-        <h1>Your basket</h1>
+        <div className="formCheckCart">
+          <h1 className="checkTitle">Your cart</h1>
 
-        {totalPrice}
-          
+          <div className="backetBox">
+            {cartItems.length === 0 && <div className="empty">is empty</div>}
 
+            {cartItems.map((item) => (
+              <div key={item.id} alt="" className="checkItems">
+                <img src={item.img} className="imgCol" alt="" />
+                <div className="basketFlex">
+                  <div className="itemsTitle">{item.title}</div>
+                  <div className="itemsTitle">
+                    <button onClick={() => onRemove(item)} className="remove">
+                      -
+                    </button>{" "}
+                    <button onClick={() => onAdd(item)} className="add">
+                      +
+                    </button>
+                  </div>
+                </div>
 
-    
-          
+                <div className="col-2 text-right">
+                  {item.qty} x ${item.price.toFixed(2)}
+                </div>
+              </div>
+            ))}
 
-          <button type="button" className="endBut">
-            Place Order 
-          </button>
+            {cartItems.length !== 0 && (
+              <>
+                <div className="row">
+                  <div className="col-2">
+                    <strong>Total Price</strong>
+                  </div>
+                  <div className="col-1 text-right">
+                    <strong>${totalPrice.toFixed(2)}</strong>
+                  </div>
+                </div>
+                <hr />
+                <div className="row"></div>
+              </>
+            )}
+          </div>
+
+          <Link
+            to={cartItems.length !== 0 ? "/checkout" : "#"}
+            className={`checkout ${cartItems.length === 0 ? "hidden" : ""}`}>
+            Place Order
+          </Link>
         </div>
-
-
-        
-
       </div>
     </div>
   );
