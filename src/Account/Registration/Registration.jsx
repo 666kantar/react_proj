@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase";
 
@@ -29,50 +29,54 @@ const Registration = () => {
   };
 
   return (
-    <main>
-      <section>
-        <div>
-          <div>
-            <h1>TODO App</h1>
+<div className="bodyA">
+      <div className="page">
+        <div className="title">
+          <img src="/img/logoTT.png" alt="logoA" className="logoA" />
+          <p style={{textAlign: 'center'}}>
+            Registration
+          </p> 
             {error && <p style={{ color: 'red' }}>{error}</p>}
             <form>
-              <div>
-                <label htmlFor="email-address">Email address</label>
-                <input
-                  type="email"
-                  label="Email address"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  placeholder="Email address"
-                />
-              </div>
+          <div className="border">
+            <div className="form">
 
-              <div>
-                <label htmlFor="password">Password</label>
-                <input
-                  type="password"
-                  label="Create password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                  placeholder="Password"
-                />
-              </div>
+              <input
+                className="formBorder"
+                type="email"
+                name="email"
+                id="email"
+                placeholder="email"
+                required
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              
+              <input
+                className="formBorder"
+                type="password"
+                name="password"
+                id="password"
+                size="30"
+                placeholder="password"
+                required
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </div>
+            <button type="submit" className="buttIn" onClick={onSubmit} style={{marginBottom: "1rem"}}>
+              Sign up
+            </button>
+          </div>
 
-              <button type="submit" onClick={onSubmit}>
-                Sign up
-              </button>
-            </form>
+        </form>
 
             <p>
-              Already have an account? <NavLink to="/login">Sign in</NavLink>
+              Already have an account? <Link to="/login">Sign in</Link>
             </p>
           </div>
         </div>
-      </section>
-    </main>
+</div>
   );
 };
+
 
 export default Registration;

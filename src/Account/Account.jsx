@@ -69,14 +69,15 @@ function Account() {
             <button type="submit" className="buttIn" onClick={onLogin}>
               Sign in
             </button>
-            <Link to="/registration" className="forget">
+            <Link to="/1234" className="forget">
               Forgot password?
             </Link>
+
+            <Link to="/registration" className="buttCreate" >
+              Create account
+            </Link>
           </div>
-
         </form>
-       
-
       </div>
     </div>
   );

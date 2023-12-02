@@ -1,7 +1,36 @@
-import React from "react";
+import React, {useState} from "react";
 import "./Checkout.css";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../firebase";
+import { Form, useNavigate } from "react-router-dom";
 
-export default function Checkout() {
+
+
+const Checkout = () => {
+
+  const navigate = useNavigate();
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    console.log("email:", email);
+    console.log("password:", password);
+
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+      console.log(user);
+      navigate("/login");
+    } catch (error) {
+      const errorMessage = error.message;
+      const formattedErrorMessage = errorMessage.replace("Firebase: ", ""); // Відокремлюємо повідомлення від префіксу
+      console.error(formattedErrorMessage);
+      setError(formattedErrorMessage);
+    }
+  };
 
   return (
     <div className="bodyCheck">
@@ -23,7 +52,7 @@ export default function Checkout() {
             </div>
 
             <div className="formgroup">
-              <input type="email" name="email" className="form-control" placeholder="Email Address"/>
+              <input type="email" name="email" className="form-control" placeholder="Email Address" onChange={(e) => setEmail(e.target.value)} required/>
             </div>
 
             <div className="formgroup-2">
@@ -57,7 +86,7 @@ export default function Checkout() {
             
           </div>
 
-          <button type="button" className="endBut">
+          <button type="submit" className="endBut" onClick={onSubmit}>
             Place Order
           </button>
         </div>
@@ -69,3 +98,7 @@ export default function Checkout() {
     </div>
   );
 }
+
+
+
+export default Checkout;

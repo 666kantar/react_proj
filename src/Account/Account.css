@@ -1,6 +1,6 @@
 .bodyA{
     background-color: whitesmoke;
-    padding: 10vw 0;
+    padding: 5vw 0 10vw 0;
 }
 
 .page{
@@ -70,8 +70,28 @@
     padding: 0 16px;
     width: 90%;
     cursor: pointer;
+    border: 2px solid black;
+}
+
+.buttIn:hover, .buttCreate:hover{
+    color: black;
+    background-color: white;
 }
 
 .forget{
     margin: 1em;
+}
+
+.buttCreate{
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 20px;
+    line-height: 48px;
+    padding: 0 16px;
+    max-width: 90%;
+    cursor: pointer;
+    margin: 1rem;
+    border: 2px solid black;
 }
