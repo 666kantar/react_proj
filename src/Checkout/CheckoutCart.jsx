@@ -5,6 +5,9 @@ import "./CheckoutCart.css";
 export default function CheckoutCart(props) {
   const [, onAdd, cartItems, totalPrice, onRemove] = useOutletContext();
 
+
+
+
   return (
     <div className="bodyCheck">
       <div className="checkPage">
@@ -52,7 +55,7 @@ export default function CheckoutCart(props) {
           </div>
 
           <Link
-            to={cartItems.length !== 0 ? "/checkout" : "#"}
+            to="/checkout"
             className={`checkout ${cartItems.length === 0 ? "hidden" : ""}`}>
             Place Order
           </Link>

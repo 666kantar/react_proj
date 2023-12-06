@@ -12,8 +12,33 @@ function Main() {
   const [cartItems, setCartItems] = useState([]);
   const itemsPrice = cartItems.reduce((a, c) => a + c.qty * c.price, 0);
   const [totalPrice, setTotalPrice] = useState(0);
+
+  const [order, setOrder] = useState([]);
+
+
+
+
+
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    phone: "",
+    email: "",
+    full: "",
+    apartment: "",
+    streetNumber: "",
+    street: "",
+    city: "",
+    provinceS: "",
+    zipcode: "",
+    totalPrice: "",
+  });
+
+
   const onAdd = (product) => {
     const exist = cartItems.find((x) => x.id === product.id);
+
+    
     if (exist) {
       setCartItems(
         cartItems.map((x) =>
@@ -42,11 +67,16 @@ function Main() {
     setTotalPrice(itemsPrice);
   }, [itemsPrice]);
 
+ useEffect(() => {
+      setOrder({items: cartItems, totalPrice: totalPrice.toFixed(2)})
+
+ },  [cartItems, totalPrice]);
+
 
   return (
     <>
       <Nav cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} totalPrice={totalPrice}/>
-      <Outlet context={[products, onAdd, cartItems, totalPrice, onRemove]} />
+      <Outlet context={[products, onAdd, cartItems, totalPrice, onRemove, formData, setFormData, order]} />
       <ScrollToTop />
       <Footer />
     </>
