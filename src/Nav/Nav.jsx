@@ -10,7 +10,7 @@ function Nav(props) {
     const location = useLocation();
     const isHomePage = location.pathname === '/';
     const { cartItems, onAdd, onRemove,  totalPrice} = props;
-    const isCheckoutPage = location.pathname === '/checkout' || location.pathname === '/checkout_cart'  || location.pathname === '/account';
+    const isCheckoutPage = location.pathname === '/checkout' || location.pathname === '/checkout_cart'  || location.pathname === '/login' || location.pathname === '/me';
 
     
 

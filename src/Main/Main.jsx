@@ -14,7 +14,7 @@ function Main() {
   const [totalPrice, setTotalPrice] = useState(0);
 
   const [order, setOrder] = useState([]);
-
+  const [email, setEmail] = useState("");
 
 
 
@@ -32,6 +32,7 @@ function Main() {
     provinceS: "",
     zipcode: "",
     totalPrice: "",
+    comment: "",
   });
 
 
@@ -76,7 +77,7 @@ function Main() {
   return (
     <>
       <Nav cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} totalPrice={totalPrice}/>
-      <Outlet context={[products, onAdd, cartItems, totalPrice, onRemove, formData, setFormData, order]} />
+      <Outlet context={[products, onAdd, cartItems, totalPrice, onRemove, formData, setFormData, order, email, setEmail]} />
       <ScrollToTop />
       <Footer />
     </>

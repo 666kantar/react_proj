@@ -1,12 +1,17 @@
 import React, { useEffect, useState } from "react";
 
-import "./Account.css";
-import { Link, useNavigate } from "react-router-dom";
+import "./Login.css";
+import { Link, useNavigate, useOutletContext } from "react-router-dom";
 
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
 
-function Account() {
+
+
+
+
+function Login() {
+  const [products, onAdd, cartItems, totalPrice, onRemove, formData, setFormData, order, email, setEmail] = useOutletContext();
   useEffect(() => {
     document.title = "MMD Authorization";
     return () => {
@@ -15,7 +20,7 @@ function Account() {
   }, []);
 
   const navigate = useNavigate();
-  const [email, setEmail] = useState("");
+
   const [password, setPassword] = useState("");
 
   const onLogin = (e) => {
@@ -24,8 +29,9 @@ function Account() {
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-        navigate("#");
+        navigate("/me");
         console.log(user.uid);
+        console.log(email);
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -83,4 +89,4 @@ function Account() {
   );
 }
 
-export default Account;
+export default Login;

@@ -57,6 +57,7 @@ const Checkout = (props) => {
                   placeholder="First name"
                   value={formData.firstName}
                   onChange={handleChange}
+                  required
                 />
               </div>
 
@@ -68,6 +69,7 @@ const Checkout = (props) => {
                   placeholder="Last name"
                   value={formData.lastName}
                   onChange={handleChange}
+                  required
                 />
               </div>
 
@@ -76,9 +78,11 @@ const Checkout = (props) => {
                   type="tel"
                   name="phone"
                   className="form-control"
-                  placeholder="Phone number"
+                  placeholder="Phone number in format: 1234567890"
                   value={formData.phone}
                   onChange={handleChange}
+                  pattern="[0-9]{10}"
+                  required
                 />
               </div>
 
@@ -90,6 +94,7 @@ const Checkout = (props) => {
                   placeholder="Email Address"
                   value={formData.email}
                   onChange={handleChange}
+                  required
                 />
               </div>
 
@@ -101,6 +106,7 @@ const Checkout = (props) => {
                   placeholder="Full Address"
                   value={formData.full}
                   onChange={handleChange}
+                  required
                 />
               </div>
 
@@ -112,6 +118,7 @@ const Checkout = (props) => {
                   placeholder="Apartment"
                   value={formData.apartment}
                   onChange={handleChange}
+                  required
                 />
               </div>
 
@@ -123,6 +130,7 @@ const Checkout = (props) => {
                   placeholder="Street number"
                   value={formData.streetNumber}
                   onChange={handleChange}
+                  required
                 />
               </div>
 
@@ -134,6 +142,7 @@ const Checkout = (props) => {
                   placeholder="Street"
                   value={formData.street}
                   onChange={handleChange}
+                  required
                 />
               </div>
 
@@ -145,6 +154,7 @@ const Checkout = (props) => {
                   placeholder="City"
                   value={formData.city}
                   onChange={handleChange}
+                  required
                 />
               </div>
 
@@ -156,6 +166,7 @@ const Checkout = (props) => {
                   placeholder="Province" 
                   value={formData.provinceS}
                   onChange={handleChange}
+                  required
                 />
               </div>
 
@@ -166,6 +177,18 @@ const Checkout = (props) => {
                   className="form-control"
                   placeholder="Zip Code"
                   value={formData.zipcode}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+
+              <div className="formgroup-2">
+                <textarea
+                  type="text"
+                  name="comment"
+                  className="form-control-2"
+                  placeholder="Your comment"
+                  value={formData.comment}
                   onChange={handleChange}
                 />
               </div>

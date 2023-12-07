@@ -10,11 +10,11 @@ import ContactPage from "./InfoPages/Contact/ContactPage";
 
 import Main from "./Main/Main";
 import ErrorPage from "./Error/Error";
-import Account from './Account/Account'
+import Login from './Account/Login'
 import Checkout from "./Checkout/Checkout2/Checkout";
 import CheckoutCart from "./Checkout/CheckoutCart";
 import Registration from "./Account/Registration/Registration"
-
+import PersonalPage from "./PersonalPage/PersonalPage"
   
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -26,10 +26,12 @@ import Registration from "./Account/Registration/Registration"
         
 
         <Route path="*" element={<ErrorPage />} />
-        <Route path="/account" element={<Account />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/registration" element={<Registration />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/checkout_cart" element={<CheckoutCart />} />
+
+        <Route path="/me" element={<PersonalPage />} />
       </Route>
        
     )
