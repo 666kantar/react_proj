@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from 'react';
 
 import "./Nav.css"
-import ShopCart from "../Cart/ShopCart";
+import ShopCart from "./Cart/ShopCart";
 import Slider from "../Slider"
 
 

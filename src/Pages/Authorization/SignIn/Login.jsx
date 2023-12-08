@@ -4,7 +4,7 @@ import "./Login.css";
 import { Link, useNavigate, useOutletContext } from "react-router-dom";
 
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../firebase";
+import { auth } from "../../../firebase";
 
 
 

@@ -4,7 +4,7 @@ import "./ShopCart.css";
 import { Link, useNavigate } from "react-router-dom";
 import Basket from "./Basket";
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
-import { auth } from "../firebase";
+import { auth } from "../../firebase";
 
 
 function ShopCart(props) {

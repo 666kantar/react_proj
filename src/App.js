@@ -4,16 +4,16 @@ import {
     Route,
     RouterProvider,
   } from "react-router-dom";
-import MainPage from "./MainPage/MainPage";
-import Company from "./InfoPages/Company/Company"
-import ContactPage from "./InfoPages/Contact/ContactPage";
+import MainPage from "./Pages/MainPage/MainPage";
+import Company from "./Pages/InfoPages/Company/Company"
+import ContactPage from "./Pages/InfoPages/Contact/ContactPage";
 
 import Main from "./Main/Main";
-import ErrorPage from "./Error/Error";
-import Login from './Account/Login'
-import Checkout from "./Checkout/Checkout2/Checkout";
-import CheckoutCart from "./Checkout/CheckoutCart";
-import Registration from "./Account/Registration/Registration"
+import ErrorPage from "./Pages/Error/Error";
+import Login from './Pages/Authorization/SignIn/Login'
+import Checkout from "./Pages/OrderMaking/Delivery/Checkout";
+import CheckoutCart from "./Pages/OrderMaking/Checkout/CheckoutCart";
+import Registration from "./Pages/Authorization/Registration/Registration"
 import PersonalPage from "./PersonalPage/PersonalPage"
   
   const router = createBrowserRouter(

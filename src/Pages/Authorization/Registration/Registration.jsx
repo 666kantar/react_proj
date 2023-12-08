@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../firebase";
+import { auth } from "../../../firebase";
 import { useOutletContext } from "react-router-dom";
 const Registration = () => {
-    const [products, onAdd, cartItems, totalPrice, onRemove, formData, setFormData, order, , , firstName, setFirstName] = useOutletContext();
+    const [products, onAdd, cartItems, totalPrice, onRemove, formData, setFormData, order] = useOutletContext();
 
   const navigate = useNavigate();
 
@@ -17,10 +17,10 @@ const Registration = () => {
     e.preventDefault();
     console.log("email:", email);
     console.log("password:", password);
-    console.log("first name:", firstName);
+
 
     try {
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password, firstName);
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
       console.log(user);
       navigate("/login");
@@ -66,15 +66,7 @@ const Registration = () => {
                 onChange={(e) => setPassword(e.target.value)}
               />
 
-<input
-                className="formBorder"
-                type="text"
-                name="firstName"
-                id="firstName"
-                placeholder="firstName"
-                required
-                onChange={(e) => setFirstName(e.target.value)}
-              />
+
             </div>
             <button type="submit" className="buttIn" onClick={onSubmit} style={{marginBottom: "1rem"}}>
               Sign up
