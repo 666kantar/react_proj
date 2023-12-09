@@ -1,13 +1,11 @@
 import React from "react";
-import { Link, useOutletContext } from "react-router-dom";
+import { Link, useNavigate, useOutletContext } from "react-router-dom";
 import "./Checkout.css";
-
 
 const Checkout = (props) => {
 
   const [, , cartItems, , , formData, setFormData, order] = useOutletContext();
-
-
+  const navigate = useNavigate();
 
 
   const handleChange = (e) => {
@@ -20,6 +18,8 @@ const Checkout = (props) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
+    navigate("/payment");
+
     console.log("Form Data:", formData);
     console.log(order);
   };
@@ -56,6 +56,7 @@ const Checkout = (props) => {
                   className="form-control"
                   placeholder="First name"
                   value={formData.firstName}
+                 
                   onChange={handleChange}
                   required
                 />

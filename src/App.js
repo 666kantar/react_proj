@@ -15,21 +15,25 @@ import Checkout from "./Pages/OrderMaking/Delivery/Checkout";
 import CheckoutCart from "./Pages/OrderMaking/Checkout/CheckoutCart";
 import Registration from "./Pages/Authorization/Registration/Registration"
 import PersonalPage from "./PersonalPage/PersonalPage"
+import Payment from "./Pages/OrderMaking/Paymet/Payment";
   
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<Main />}>
+        <Route path="*" element={<ErrorPage />} />
+
         <Route index element={<MainPage />} />
 
         <Route path="/company" element={<Company />} />
         <Route path="/contact" element={<ContactPage />} />
         
-
-        <Route path="*" element={<ErrorPage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/registration" element={<Registration />} />
+
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/checkout_cart" element={<CheckoutCart />} />
+        <Route path="/payment" element={<Payment />} />
+
 
         <Route path="/me" element={<PersonalPage />} />
       </Route>

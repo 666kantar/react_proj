@@ -38,8 +38,8 @@
     
     
                 .mainImgBg{
-                    height: 40em;
-                    width: 40em;
+                    min-height: 80vh;
+                    min-width: 80vh;
                     max-width: 95vw;
                     max-height: 95vw;
                     border-radius: 50%;
@@ -54,7 +54,7 @@
                     .mainImg {
                         z-index: 1;
                         position: absolute;
-                        width: 50em;
+                        width: 120%;
                         max-width: 95vw;
                         filter: drop-shadow(21px 16px 23px black) invert(0%);
                     } 
