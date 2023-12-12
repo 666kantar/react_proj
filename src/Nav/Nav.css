@@ -72,3 +72,15 @@ body.overflow-hidden {
         z-index: 9;
       }
       
+
+
+      .navLogout{
+        cursor: pointer;
+        padding-right: 2rem;
+        font-size: 1.8rem;
+        color: lightgray;
+      }
+
+      .navLogout:hover{
+        transform: scale(1.2);
+      }

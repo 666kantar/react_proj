@@ -1,9 +1,52 @@
-import React, { useState } from "react";
-import { useOutletContext, Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useOutletContext } from "react-router-dom";
 import "./Payment.css";
+import Modal from "./Modal/Modal";
+import { getDatabase, ref, set, onValue } from "firebase/database";
 
 export default function Payment(props) {
-  const [, onAdd, cartItems, totalPrice, onRemove] = useOutletContext();
+  const [products, onAdd, cartItems, totalPrice, onRemove, formData, setFormData, order, email, setEmail] = useOutletContext();
+
+  const db = getDatabase();
+  const [orderNo, setOrderNo] = useState();
+
+  useEffect(() => {
+    const db = getDatabase();
+    const distanceRef = ref(db, "order_no/newNum");
+
+    const unsubscribe = onValue(distanceRef, (snapshot) => {
+      const orderNoValue = snapshot.val();
+      setOrderNo(orderNoValue);
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+  let newNum = parseInt(orderNo) + 1;
+
+
+  function newOrderNo(newNum){
+    const distance = ref(db, "order_no/");
+ set(distance, {newNum: newNum})};
+
+
+  function writeUserData(firstName, lastName, phone, email, full, apartment, streetNumber, street, city, provinceS, zipcode, totalPrice, comment) {
+
+
+    const sanitizedEmail = formData.email.replace(/\./g, "-");
+
+    const payment = ref(db, 'settings/' + sanitizedEmail + '/' + newNum)
+   
+   set(payment, {
+     settings: formData,
+     order: order,
+   });
+   
+   }
+
+
+  const [isModalOpen, setModalOpen] = useState(false);
+
 
   const [payment, setPayment] = useState({
     cvv: "",
@@ -23,13 +66,40 @@ export default function Payment(props) {
       [name]: value,
     }));
   };
+  
+  const handleButtonClick = () => {
+    setModalOpen(true);
+
+    document.body.style.overflow = "hidden";
+  };
+
+
+
+  const closeModal = () => {
+    setModalOpen(false);
+    window.location.href = "/";
+    document.body.style.overflow = "visible";
+  };
+
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    handleButtonClick();
+    writeUserData(formData.firstName, formData.lastName, formData.phone, formData.email, formData.full, formData.apartment, formData.streetNumber, formData.street, formData.city, formData.provinceS, formData.zipcode, formData.totalPrice, formData.comment)
+    newOrderNo(newNum)
+  };
+
+
 
   return (
     <div className="bodyCheck">
       <div className="checkPage">
         <div className="formCheckCart">
           <h1 className="checkTitle">Payment information</h1>
+ 
 
+          <form onSubmit={handleSubmit}>
           <div className="backetBox">
             {cartItems.length === 0 && <div className="empty">is empty</div>}
 
@@ -58,6 +128,7 @@ export default function Payment(props) {
                         className="part"
                         placeholder="123"
                         pattern="[0-9]{3}"
+                        maxLength="3"
                         value={payment.cvv}
                         onChange={handleChange}
                         required
@@ -72,6 +143,7 @@ export default function Payment(props) {
                           className="part"
                           placeholder="4000"
                           pattern="[0-9]{4}"
+                          maxLength="4"
                           value={payment.firstPart}
                           onChange={handleChange}
                           required
@@ -83,6 +155,7 @@ export default function Payment(props) {
                           className="part"
                           placeholder="1234"
                           pattern="[0-9]{4}"
+                          maxLength="4"
                           value={payment.secondPart}
                           onChange={handleChange}
                           required
@@ -94,6 +167,7 @@ export default function Payment(props) {
                           className="part"
                           placeholder="5678"
                           pattern="[0-9]{4}"
+                          maxLength="4"
                           value={payment.thirdPart}
                           onChange={handleChange}
                           required
@@ -105,6 +179,7 @@ export default function Payment(props) {
                           className="part"
                           placeholder="9010"
                           pattern="[0-9]{4}"
+                          maxLength="4"
                           value={payment.fourthPart}
                           onChange={handleChange}
                           required
@@ -119,6 +194,7 @@ export default function Payment(props) {
                         className="expirePart"
                         placeholder="01"
                         pattern="[0-9]{2}"
+                        maxLength="2"
                         value={payment.month}
                         onChange={handleChange}
                         required
@@ -130,6 +206,7 @@ export default function Payment(props) {
                         className="expirePart"
                         placeholder="25"
                         pattern="[0-9]{2}"
+                        maxLength="2"
                         value={payment.year}
                         onChange={handleChange}
                         required
@@ -143,6 +220,7 @@ export default function Payment(props) {
                         name="fullName"
                         className="partF"
                         placeholder="Mary Clint"
+                        minLength="6"
                         value={payment.fullName}
                         onChange={handleChange}
                         required
@@ -154,12 +232,28 @@ export default function Payment(props) {
             )}
           </div>
 
-          <Link
-            to="/checkout"
-            className={`checkout ${cartItems.length === 0 ? "hidden" : ""}`}
-          >
-            Place Order
-          </Link>
+
+          <button type="submit" className={`endBut ${cartItems.length === 0 ? "hidden" : ""}`}>Confirn</button>
+
+
+          </form>
+
+
+{isModalOpen && (
+        <Modal className="modalPage" onClose={closeModal}>
+
+          <h2>Congradulation <br />
+          Your order <br />
+          {orderNo}
+          <br />
+          was accepted</h2>
+
+          <button onClick={closeModal}>Close</button>
+        </Modal>
+      )}
+
+
+
         </div>
       </div>
     </div>

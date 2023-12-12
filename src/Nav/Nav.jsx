@@ -1,18 +1,21 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from 'react';
+import { signOut } from "firebase/auth";
+import { auth } from "../firebase";
 
 import "./Nav.css"
 import ShopCart from "./Cart/ShopCart";
 import Slider from "../Slider"
 
 
+
 function Nav(props) {
     const location = useLocation();
     const isHomePage = location.pathname === '/';
     const { cartItems, onAdd, onRemove,  totalPrice} = props;
-    const isCheckoutPage = location.pathname === '/checkout' || location.pathname === '/checkout_cart'  || location.pathname === '/login' || location.pathname === '/me';
-
-    
+    const isCheckoutPage = location.pathname === '/checkout' || location.pathname === '/checkout_cart'  || location.pathname === '/login' || location.pathname === '/me' || location.pathname === '/settings' || location.pathname === '/payment'; 
+    const isAccount = location.pathname === '/me' || location.pathname === '/settings';
+    const navigate = useNavigate();
 
     let [cartOpen, setCartOpen] = useState(false)
    
@@ -30,6 +33,18 @@ function Nav(props) {
         document.body.classList.remove('overflow-hidden');
     };
 
+    const handleLogout = () => {
+        signOut(auth)
+          .then(() => {
+            // Sign-out successful.
+            console.log("Signed out successfully");
+            navigate("/");
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      };
+
 
     return (
     <>
@@ -44,7 +59,8 @@ function Nav(props) {
         </div>
 
 
-        <img src='./img/basket.png' alt="basket" onClick={() => setCartOpen(cartOpen = !cartOpen)} className={`shopCartButton ${cartOpen && 'active'}`}/> 
+        <img src='./img/basket.png' alt="basket" onClick={() => setCartOpen(cartOpen = !cartOpen)} className={`shopCartButton ${cartOpen && 'active'}`}/>
+        <div onClick={handleLogout} className="navLogout">Logout</div>
         
         {cartOpen && <div className="overlay" onClick={closeCart}></div>}
 
@@ -63,6 +79,7 @@ function Nav(props) {
 
 
         {isCheckoutPage && <style>{'.shopCartButton {display: none;}'}</style>}
+        {!isAccount && <style>{'.navLogout {display: none;}'}</style>}
     </>
     )}
     export default Nav;

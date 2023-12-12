@@ -6,6 +6,8 @@ import Nav from "../Nav/Nav.jsx";
 import ScrollToTop from "../ScrollToTop";
 import data from "../data.js";
 import { Outlet } from "react-router-dom";
+import { auth } from "../firebase";
+import { onAuthStateChanged } from "firebase/auth";
 
 function Main() {
   const { products } = data;
@@ -15,9 +17,6 @@ function Main() {
 
   const [order, setOrder] = useState([]);
   const [email, setEmail] = useState("");
-
-
-
 
   const [formData, setFormData] = useState({
     firstName: "",
@@ -73,11 +72,23 @@ function Main() {
 
  },  [cartItems, totalPrice]);
 
+ useEffect(() => {
+  const unsubscribe = onAuthStateChanged(auth, (user) => {
+    if (user) {
+      const userEmail = user.email;
+      setEmail(userEmail);
+    } else {
+      setEmail("");
+    }
+  });
+
+    return () => unsubscribe();
+}, [auth]);
 
   return (
     <>
       <Nav cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} totalPrice={totalPrice}/>
-      <Outlet context={[products, onAdd, cartItems, totalPrice, onRemove, formData, setFormData, order, email, setEmail]} />
+      <Outlet context={[products, onAdd, cartItems, totalPrice, onRemove, formData, setFormData, order, email, setEmail, setCartItems]} />
       <ScrollToTop />
       <Footer />
     </>

@@ -11,7 +11,7 @@ import { auth } from "../../../firebase";
 
 
 function Login() {
-  const [products, onAdd, cartItems, totalPrice, onRemove, formData, setFormData, order, email, setEmail] = useOutletContext();
+  const [, , , , , , , , email, setEmail] = useOutletContext();
   useEffect(() => {
     document.title = "MMD Authorization";
     return () => {
