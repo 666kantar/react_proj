@@ -14,10 +14,11 @@ import Login from './Pages/Authorization/SignIn/Login'
 import Checkout from "./Pages/OrderMaking/Delivery/Checkout";
 import CheckoutCart from "./Pages/OrderMaking/Checkout/CheckoutCart";
 import Registration from "./Pages/Authorization/Registration/Registration"
-import PersonalPage from "./Pages/PersonalPage/PersonalPage"
+import PersonalPage from "./Pages/PersonalPage/PersonalPage/PersonalPage"
 import Payment from "./Pages/OrderMaking/Paymet/Payment";
 import Settings from "./Pages/PersonalPage/Settings/Settings";
 import Modal from "./Pages/OrderMaking/Paymet/Modal/Modal";
+import Admin from "./Pages/PersonalPage/Admin/Admin";
   
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -36,6 +37,7 @@ import Modal from "./Pages/OrderMaking/Paymet/Modal/Modal";
         <Route path="/checkout_cart" element={<CheckoutCart />} />
         <Route path="/payment" element={<Payment />} />
         <Route path="/modal" element={<Modal />} />
+        <Route path="/admin" element={<Admin />} />
 
 
         <Route path="/me" element={<PersonalPage />} />

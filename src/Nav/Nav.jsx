@@ -1,85 +1,97 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase";
 
-import "./Nav.css"
+import "./Nav.css";
 import ShopCart from "./Cart/ShopCart";
-import Slider from "../Slider"
-
-
+import Slider from "../Slider";
 
 function Nav(props) {
-    const location = useLocation();
-    const isHomePage = location.pathname === '/';
-    const { cartItems, onAdd, onRemove,  totalPrice} = props;
-    const isCheckoutPage = location.pathname === '/checkout' || location.pathname === '/checkout_cart'  || location.pathname === '/login' || location.pathname === '/me' || location.pathname === '/settings' || location.pathname === '/payment'; 
-    const isAccount = location.pathname === '/me' || location.pathname === '/settings';
-    const navigate = useNavigate();
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
+  const { cartItems, onAdd, onRemove, totalPrice } = props;
+  const isCheckoutPage =
+    location.pathname === "/checkout" ||
+    location.pathname === "/checkout_cart" ||
+    location.pathname === "/login" ||
+    location.pathname === "/me" ||
+    location.pathname === "/settings" ||
+    location.pathname === "/payment" ||
+    location.pathname === "/admin";
+  const isAccount =
+    location.pathname === "/me" || location.pathname === "/settings";
+  const navigate = useNavigate();
 
-    let [cartOpen, setCartOpen] = useState(false)
-   
-    useEffect(() => {
-        if (isCheckoutPage) {
-            setCartOpen(false);
-            document.body.classList.remove('overflow-hidden');
-        } else {
-            document.body.classList.toggle('overflow-hidden', cartOpen);
-        }
-    }, [location.pathname, isCheckoutPage, cartOpen]);
+  let [cartOpen, setCartOpen] = useState(false);
 
-    const closeCart = () => {
-        setCartOpen(false);
-        document.body.classList.remove('overflow-hidden');
-    };
+  useEffect(() => {
+    if (isCheckoutPage) {
+      setCartOpen(false);
+      document.body.classList.remove("overflow-hidden");
+    } else {
+      document.body.classList.toggle("overflow-hidden", cartOpen);
+    }
+  }, [location.pathname, isCheckoutPage, cartOpen]);
 
-    const handleLogout = () => {
-        signOut(auth)
-          .then(() => {
-            // Sign-out successful.
-            console.log("Signed out successfully");
-            navigate("/");
-          })
-          .catch((error) => {
-            console.log(error);
-          });
-      };
+  const closeCart = () => {
+    setCartOpen(false);
+    document.body.classList.remove("overflow-hidden");
+  };
 
+  const handleLogout = () => {
+    signOut(auth)
+      .then(() => {
+        // Sign-out successful.
+        console.log("Signed out successfully");
+        navigate("/");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
-    return (
+  return (
     <>
-        <div className="nav" id='nav'>
-        <Link to='/'><img src='/img/logoTT.png' alt="logoTT" className="logoImg"/></Link>
-
+      <div className="nav" id="nav">
+        <Link to="/">
+          <img src="/img/logoTT.png" alt="logoTT" className="logoImg" />
+        </Link>
 
         <div className="navMenu">
-            <div className="menuItem">CLASIC</div>
-            <div className="menuItem">MAGIC MUG</div>
-            <div className="menuItem">YOUR STYLE</div>
+          <div className="menuItem">CLASIC</div>
+          <div className="menuItem">MAGIC MUG</div>
+          <div className="menuItem">YOUR STYLE</div>
         </div>
 
+        <img
+          src="./img/basket.png"
+          alt="basket"
+          onClick={() => setCartOpen((cartOpen = !cartOpen))}
+          className={`shopCartButton ${cartOpen && "active"}`}
+        />
+        <div onClick={handleLogout} className="navLogout">
+          Logout
+        </div>
 
-        <img src='./img/basket.png' alt="basket" onClick={() => setCartOpen(cartOpen = !cartOpen)} className={`shopCartButton ${cartOpen && 'active'}`}/>
-        <div onClick={handleLogout} className="navLogout">Logout</div>
-        
         {cartOpen && <div className="overlay" onClick={closeCart}></div>}
 
-
-        {cartOpen &&(
-            <ShopCart cartItems={cartItems}
+        {cartOpen && (
+          <ShopCart
+            cartItems={cartItems}
             onAdd={onAdd}
             onRemove={onRemove}
-            totalPrice={totalPrice} />
+            totalPrice={totalPrice}
+          />
         )}
+      </div>
 
-        </div>
+      {isHomePage && <Slider />}
+      {isHomePage ? null : <style>{".navMenu {display: none;}"}</style>}
 
-        {isHomePage && <Slider />}
-        {isHomePage ? null : <style>{'.navMenu {display: none;}'}</style>}
-
-
-        {isCheckoutPage && <style>{'.shopCartButton {display: none;}'}</style>}
-        {!isAccount && <style>{'.navLogout {display: none;}'}</style>}
+      {isCheckoutPage && <style>{".shopCartButton {display: none;}"}</style>}
+      {!isAccount && <style>{".navLogout {display: none;}"}</style>}
     </>
-    )}
-    export default Nav;
+  );
+}
+export default Nav;

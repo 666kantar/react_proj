@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useOutletContext } from "react-router-dom";
-import { useCheckAuth } from "../../hooks";
+import { useCheckAuth } from "../../../hooks";
 import { getDatabase, onValue, ref } from "firebase/database";
 import "./ParsonalPage.css";
 
