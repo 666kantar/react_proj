@@ -17,8 +17,8 @@ export default function Payment(props) {
 
     const unsubscribe = onValue(distanceRef, (snapshot) => {
       const orderNoValue = snapshot.val();
-      setOrderNo((prevOrderNo) => {
-        return Math.max(prevOrderNo || 0, orderNoValue || 0);});
+      
+      setOrderNo(orderNoValue);
     });
 
     return () => unsubscribe();
