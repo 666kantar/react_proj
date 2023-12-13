@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useOutletContext, useNavigate } from "react-router-dom";
+import { useOutletContext, useNavigate, Link } from "react-router-dom";
 import "./Payment.css";
 import Modal from "./Modal/Modal";
 import { getDatabase, ref, set, onValue } from "firebase/database";
@@ -33,7 +33,7 @@ export default function Payment(props) {
 
 
   function writeUserData(firstName, lastName, phone, email, full, apartment, streetNumber, street, city, provinceS, zipcode, totalPrice, comment) {
-
+    const currentDate = new Date()
 
     const sanitizedEmail = formData.email.replace(/\./g, "-");
 
@@ -42,6 +42,8 @@ export default function Payment(props) {
    set(payment, {
      settings: formData,
      order: order,
+     status: "in pending",
+     data: `${currentDate.toDateString()}`
    });
    
    }
@@ -85,6 +87,24 @@ export default function Payment(props) {
     <div className="bodyCheck">
       <div className="checkPage">
         <div className="formCheckCart">
+
+        {cartItems.length === 0 ? (
+            <>            
+            <p style={{ fontSize: "2rem" }}>Cart is Empty</p>
+            <br />
+            
+            <Link
+            to="/"
+            className="checkout">
+            Let shopping
+          </Link>
+
+            </>
+
+            
+            ) : (
+              <>
+
           <h1 className="checkTitle">Payment information</h1>
  
 
@@ -227,7 +247,8 @@ export default function Payment(props) {
 
           </form>
 
-
+</>
+)}
 
 
         </div>

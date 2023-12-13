@@ -1,9 +1,39 @@
 .border{
     border: 2px solid #000000;
     margin: 1em 3em;
-
+    padding: 0 2em;
 }
 
 .itemsFlex{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 6% 35% 35% 14% 10%;
+}
+
+.orders_1{
+    grid-area: 1 / 1 / 2 / 2; 
+}
+
+.orders_2{
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+.ul{
+    grid-area: 1 / 3 / 2 / 4;
+}
+
+.orders_3{
+    grid-area: 1 / 4 / 2 / 5; 
+}
+
+.orders_4{
+    grid-area: 1 / 5 / 2 / 6;;
+    margin: 0.5em;
+}
+
+.filters{
     display: flex;
+    gap: 10em;
+    margin: 1em 12em 0 12em;
+    justify-content: space-between;
 }
