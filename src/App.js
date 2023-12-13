@@ -17,6 +17,7 @@ import Registration from "./Pages/Authorization/Registration/Registration"
 import PersonalPage from "./Pages/PersonalPage/PersonalPage"
 import Payment from "./Pages/OrderMaking/Paymet/Payment";
 import Settings from "./Pages/PersonalPage/Settings/Settings";
+import Modal from "./Pages/OrderMaking/Paymet/Modal/Modal";
   
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -34,6 +35,7 @@ import Settings from "./Pages/PersonalPage/Settings/Settings";
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/checkout_cart" element={<CheckoutCart />} />
         <Route path="/payment" element={<Payment />} />
+        <Route path="/modal" element={<Modal />} />
 
 
         <Route path="/me" element={<PersonalPage />} />

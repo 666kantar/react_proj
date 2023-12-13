@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useOutletContext } from "react-router-dom";
 import { useCheckAuth } from "../../hooks";
 import { getDatabase, onValue, ref } from "firebase/database";
 import "./ParsonalPage.css";
 
 export default function PersonalPage() {
+  const [products, onAdd, cartItems, totalPrice, onRemove, formData, setFormData, order, email, setEmail] = useOutletContext();
 
   useCheckAuth();
   const [orderNo, setOrderNo] = useState(null);
@@ -24,11 +25,9 @@ export default function PersonalPage() {
 
   return (
     <>
-      <Link to="/settings" className="settings">Change delivery information</Link>
+      {/* <Link to="/settings" className="settings">Change delivery information</Link> */}
       <br />
-      {orderNo && (
-        <p>Номер замовлення: {orderNo}</p>
-      )}
+      <section>`Hello {email} !!`</section>
     </>
   );
 }

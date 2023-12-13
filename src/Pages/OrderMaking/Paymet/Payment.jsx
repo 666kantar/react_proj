@@ -1,22 +1,24 @@
 import React, { useState, useEffect } from "react";
-import { useOutletContext } from "react-router-dom";
+import { useOutletContext, useNavigate } from "react-router-dom";
 import "./Payment.css";
 import Modal from "./Modal/Modal";
 import { getDatabase, ref, set, onValue } from "firebase/database";
 
 export default function Payment(props) {
-  const [products, onAdd, cartItems, totalPrice, onRemove, formData, setFormData, order, email, setEmail] = useOutletContext();
+  const navigate = useNavigate();
+
+  const [, , cartItems, totalPrice, , formData, , order, , ] = useOutletContext();
 
   const db = getDatabase();
   const [orderNo, setOrderNo] = useState();
 
   useEffect(() => {
-    const db = getDatabase();
     const distanceRef = ref(db, "order_no/newNum");
 
     const unsubscribe = onValue(distanceRef, (snapshot) => {
       const orderNoValue = snapshot.val();
-      setOrderNo(orderNoValue);
+      setOrderNo((prevOrderNo) => {
+        return Math.max(prevOrderNo || 0, orderNoValue || 0);});
     });
 
     return () => unsubscribe();
@@ -44,10 +46,6 @@ export default function Payment(props) {
    
    }
 
-
-  const [isModalOpen, setModalOpen] = useState(false);
-
-
   const [payment, setPayment] = useState({
     cvv: "",
     firstPart: "",
@@ -68,19 +66,10 @@ export default function Payment(props) {
   };
   
   const handleButtonClick = () => {
-    setModalOpen(true);
+    navigate("/modal");
+    window.location.reload();
 
-    document.body.style.overflow = "hidden";
   };
-
-
-
-  const closeModal = () => {
-    setModalOpen(false);
-    window.location.href = "/";
-    document.body.style.overflow = "visible";
-  };
-
 
 
   const handleSubmit = (e) => {
@@ -238,19 +227,6 @@ export default function Payment(props) {
 
           </form>
 
-
-{isModalOpen && (
-        <Modal className="modalPage" onClose={closeModal}>
-
-          <h2>Congradulation <br />
-          Your order <br />
-          {orderNo}
-          <br />
-          was accepted</h2>
-
-          <button onClick={closeModal}>Close</button>
-        </Modal>
-      )}
 
 
 
