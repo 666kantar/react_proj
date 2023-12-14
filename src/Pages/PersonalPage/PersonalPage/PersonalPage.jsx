@@ -14,6 +14,7 @@ const mainEmale = email;
 
   useCheckAuth();
 
+
   useEffect(() => {
     const distanceRef = ref(db, "settings");
   

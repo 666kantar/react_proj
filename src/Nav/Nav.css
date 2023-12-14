@@ -84,3 +84,8 @@ body.overflow-hidden {
       .navLogout:hover{
         transform: scale(1.2);
       }
+
+      .admin{cursor: pointer;
+        padding-right: 2rem;
+        font-size: 1.8rem;
+        color: lightgray;}

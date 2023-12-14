@@ -2,6 +2,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase";
+import { useCheckAdmin } from "../hooks";
 
 import "./Nav.css";
 import ShopCart from "./Cart/ShopCart";
@@ -24,6 +25,8 @@ function Nav(props) {
   const isAccount =
     location.pathname === "/me" || location.pathname === "/settings";
   const navigate = useNavigate();
+  const isAdmin = useCheckAdmin();
+
 
   let [cartOpen, setCartOpen] = useState(false);
 
@@ -72,6 +75,10 @@ function Nav(props) {
           onClick={() => setCartOpen((cartOpen = !cartOpen))}
           className={`shopCartButton ${cartOpen && "active"}`}
         />
+        <Link to={"/admin"} className="admin">
+          Admin Panel
+        </Link>
+
         <div onClick={handleLogout} className="navLogout">
           Logout
         </div>
@@ -93,6 +100,7 @@ function Nav(props) {
 
       {isCheckoutPage && <style>{".shopCartButton {display: none;}"}</style>}
       {!isAccount && <style>{".navLogout {display: none;}"}</style>}
+      {(!isAdmin || !isAccount) && <style>{".admin {display: none;}"}</style>}
     </>
   );
 }

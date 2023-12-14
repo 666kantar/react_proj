@@ -4,7 +4,7 @@ import "./Checkout.css";
 
 const Checkout = (props) => {
 
-  const [, , cartItems, , , formData, setFormData, order] = useOutletContext();
+  const [, , cartItems, , , formData, setFormData] = useOutletContext();
   const navigate = useNavigate();
 
 

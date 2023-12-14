@@ -2,13 +2,16 @@ import React, { useState, useEffect } from "react";
 import { getDatabase, ref, onValue, update } from "firebase/database";
 import "./Admin.css";
 import Products from "../Product/Product";
+import { useCheckAdmin, useCheckAuth } from "../../../hooks";
 
 export default function Admin() {
   const db = getDatabase();
   const [dbOrders, setDbOrders] = useState([]);
   const [statusFilter, setStatusFilter] = useState("all");
   const [emailFilter, setEmailFilter] = useState("");
-  
+
+  useCheckAuth();
+  useCheckAdmin();
 
   useEffect(() => {
     const distanceRef = ref(db, "settings");
