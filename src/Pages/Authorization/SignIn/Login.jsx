@@ -7,9 +7,6 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../../firebase";
 
 
-
-
-
 function Login() {
   const [, , , , , , , , email, setEmail] = useOutletContext();
   useEffect(() => {
@@ -28,7 +25,7 @@ function Login() {
     e.preventDefault();
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        
+
         navigate("/me");
       })
       .catch((error) => {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useOutletContext } from "react-router-dom";
+import { useOutletContext, Link } from "react-router-dom";
 import { getDatabase, ref, onValue } from "firebase/database";
 import { useCheckAuth } from "../../../hooks";
 import Products from "../Product/Product";
@@ -70,6 +70,25 @@ const mainEmale = email;
 
   return (
     <div>
+      {filteredAndSortedOrders.length === 0 ? (
+        <div className="bodyCheck">
+        <div className="checkPage">
+          <div className="formCheckCart">            
+        <h1 style={{ fontSize: "4rem" }}>Order history</h1><br />
+        <p style={{ fontSize: "2rem", marginBottom: "2em" }}>You haven't placed an order yet</p>
+        <br />
+        
+        <Link
+        to="/"
+        className="checkout">
+        Let shopping
+      </Link>
+
+        </div>
+        </div>
+        </div>
+      ) : (
+        <>
   
       {selectedOrder && (
         <>
@@ -110,6 +129,8 @@ const mainEmale = email;
     </div>
   );
 })}
+</>
+      )}
 
     </div>
   );

@@ -3,15 +3,20 @@ import { getDatabase, ref, onValue, update } from "firebase/database";
 import "./Admin.css";
 import Products from "../Product/Product";
 import { useCheckAdmin, useCheckAuth } from "../../../hooks";
+import { useNavigate } from "react-router-dom";
 
 export default function Admin() {
   const db = getDatabase();
   const [dbOrders, setDbOrders] = useState([]);
   const [statusFilter, setStatusFilter] = useState("all");
   const [emailFilter, setEmailFilter] = useState("");
+  const navigate = useNavigate();
+  const isAdmin = useCheckAdmin();
 
   useCheckAuth();
-  useCheckAdmin();
+  if (!isAdmin) {
+    navigate("/me")
+  }
 
   useEffect(() => {
     const distanceRef = ref(db, "settings");

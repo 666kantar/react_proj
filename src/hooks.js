@@ -23,8 +23,6 @@ export function useCheckAuth() {
 }
 
 
-
-
 export function useCheckAdmin() {
   const db = getDatabase();
   const [isAdmin, setIsAdmin] = useState(false);
@@ -45,7 +43,6 @@ export function useCheckAdmin() {
         setIsAdmin(isAdminUser);
 
         if (!isAdminUser) {
-          navigate("/me");
         }
       }
     });

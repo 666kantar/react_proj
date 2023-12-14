@@ -23,7 +23,7 @@ function Nav(props) {
     location.pathname === "/admin" ||
     location.pathname === "/Admin";
   const isAccount =
-    location.pathname === "/me" || location.pathname === "/settings";
+    location.pathname === "/me" || location.pathname === "/settings"  || location.pathname === "/admin";
   const navigate = useNavigate();
   const isAdmin = useCheckAdmin();
 
@@ -49,6 +49,7 @@ function Nav(props) {
     signOut(auth)
       .then(() => {
         navigate("/");
+        window.location.reload()
       })
       .catch((error) => {
         console.log(error);

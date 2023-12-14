@@ -19,9 +19,13 @@
   max-width: 50%;
 }
 
-.flexDelivery::-webkit-scrollbar, .flexItems::-webkit-scrollbar{
-  width: 10px; /* Ширина скролбара */
+.flexDelivery::-webkit-scrollbar-track, .flexItems::-webkit-scrollbar-track{
+background-color: rgb(255, 255, 255);
 }
+
+.flexDelivery::-webkit-scrollbar-thumb, .flexItems::-webkit-scrollbar-thumb{
+  background: linear-gradient(rgba(245, 245, 245, 0), rgba(0, 0, 0, 0.466));
+  }
 
 .flexDelObj {
   display: grid;
