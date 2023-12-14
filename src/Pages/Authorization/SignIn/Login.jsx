@@ -22,21 +22,20 @@ function Login() {
   const navigate = useNavigate();
 
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
 
   const onLogin = (e) => {
     e.preventDefault();
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
+        
         navigate("/me");
-        console.log(user.uid);
-        console.log(email);
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log(errorCode, errorMessage);
+        setError("Wrong login or password");
       });
   };
 
@@ -75,6 +74,7 @@ function Login() {
             <button type="submit" className="buttIn" onClick={onLogin}>
               Sign in
             </button>
+            {error && <p className="error-message">{error}</p>}
             <Link to="/1234" className="forget">
               Forgot password?
             </Link>

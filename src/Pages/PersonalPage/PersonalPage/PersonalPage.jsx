@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { Link, useOutletContext } from "react-router-dom";
-import { getDatabase, ref, onValue, update } from "firebase/database";
+import { useOutletContext } from "react-router-dom";
+import { getDatabase, ref, onValue } from "firebase/database";
 import { useCheckAuth } from "../../../hooks";
 import Products from "../Product/Product";
 
 export default function PersonalPage() {
-  const [products, onAdd, cartItems, totalPrice, onRemove, formData, setFormData, order, email, setEmail] = useOutletContext();
+  const [, , , , , , , , email, ] = useOutletContext();
   const db = getDatabase();
   const [dbOrders, setDbOrders] = useState([]);
-  const [statusFilter, setStatusFilter] = useState("all");
-  const [emailFilter, setEmailFilter] = useState("");
+  const [statusFilter] = useState("all");
   
 const mainEmale = email;
 

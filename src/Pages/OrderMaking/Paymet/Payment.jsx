@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useOutletContext, useNavigate, Link } from "react-router-dom";
 import "./Payment.css";
-import Modal from "./Modal/Modal";
 import { getDatabase, ref, set, onValue } from "firebase/database";
 
 export default function Payment(props) {
@@ -22,7 +21,7 @@ export default function Payment(props) {
     });
 
     return () => unsubscribe();
-  }, []);
+  }, [db]);
 
   let newNum = parseInt(orderNo) + 1;
 

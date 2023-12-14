@@ -83,7 +83,7 @@ function Main() {
   });
 
     return () => unsubscribe();
-}, [auth]);
+}, []);
 
   return (
     <>

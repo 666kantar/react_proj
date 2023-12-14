@@ -41,17 +41,17 @@ function Nav(props) {
     document.body.classList.remove("overflow-hidden");
   };
 
+  
   const handleLogout = () => {
     signOut(auth)
       .then(() => {
-        // Sign-out successful.
-        console.log("Signed out successfully");
         navigate("/");
       })
       .catch((error) => {
         console.log(error);
       });
   };
+  
 
   return (
     <>

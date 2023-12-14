@@ -13,18 +13,13 @@ const Registration = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    console.log("email:", email);
-    console.log("password:", password);
-
-
+  
     try {
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-      const user = userCredential.user;
-      console.log(user);
+      await createUserWithEmailAndPassword(auth, email, password);
       navigate("/login");
     } catch (error) {
       const errorMessage = error.message;
-      const formattedErrorMessage = errorMessage.replace("Firebase: ", ""); // Відокремлюємо повідомлення від префіксу
+      const formattedErrorMessage = errorMessage.replace("Firebase: ", ""); 
       console.error(formattedErrorMessage);
       setError(formattedErrorMessage);
     }

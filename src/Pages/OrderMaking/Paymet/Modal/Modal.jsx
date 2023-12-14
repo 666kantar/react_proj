@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./Modal.css";
-import { Link, useOutletContext } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { getDatabase, ref, onValue } from "firebase/database";
 
 const Modal = () => {
-  const [, , cartItems, , , , , , , , setCartItems] = useOutletContext();
-  console.log(cartItems);
+
   const [orderNo, setOrderNo] = useState();
 
   useEffect(() => {

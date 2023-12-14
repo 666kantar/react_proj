@@ -23,7 +23,6 @@ export default function Admin() {
     return () => unsubscribe();
   }, [db]);
   
-  console.log(dbOrders);
 
   const handleStatusChange = (email, orderNumber, newStatus) => {
     const sanitizedEmail = email.replace(/\./g, "-");

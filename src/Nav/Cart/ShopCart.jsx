@@ -32,8 +32,6 @@ function ShopCart(props) {
   const handleLogout = () => {
     signOut(auth)
       .then(() => {
-        // Sign-out successful.
-        console.log("Signed out successfully");
         navigate("/");
       })
       .catch((error) => {

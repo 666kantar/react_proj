@@ -19,9 +19,6 @@ const Checkout = (props) => {
   const onSubmit = (e) => {
     e.preventDefault();
     navigate("/payment");
-
-    console.log("Form Data:", formData);
-    console.log(order);
   };
 
   return (

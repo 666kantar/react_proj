@@ -8,7 +8,7 @@ export default function Settings() {
 
   const navigate = useNavigate();
 
-  const [, , , , , formData, setFormData, order, , ,] = useOutletContext();
+  const [, , , , , formData, setFormData, , , ,] = useOutletContext();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -21,9 +21,6 @@ export default function Settings() {
   const onSubmit = (e) => {
     e.preventDefault();
     navigate("/payment");
-
-    console.log("Form Data:", formData);
-    console.log(order);
   };
 
   return (
