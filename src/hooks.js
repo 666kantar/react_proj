@@ -11,11 +11,9 @@ export function useCheckAuth() {
   onAuthStateChanged(auth, (user) => {
     if (user) {
 
-      console.log("uid", user.uid);
       loggedIn = true;
     } else {
 
-      console.log("user is logged out");
       loggedIn = false;
       navigate("/login");
     }

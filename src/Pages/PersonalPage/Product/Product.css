@@ -1,0 +1,44 @@
+.flexDetail {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-height: 70vh;
+ 
+}
+
+.flexDelivery {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 10px;
+  padding: 2em;
+  -webkit-box-shadow: 1px 6px 18px -1px rgba(0, 0, 0, 0.76);
+  box-shadow: 1px 6px 18px -1px rgba(0, 0, 0, 0.76);
+  overflow-y: auto;
+  max-height: 70vh;
+  max-width: 50%;
+}
+
+.flexDelivery::-webkit-scrollbar, .flexItems::-webkit-scrollbar{
+  width: 10px; /* Ширина скролбара */
+}
+
+.flexDelObj {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+}
+
+.flexItems {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 10px;
+  padding: 2em;
+  -webkit-box-shadow: 1px 6px 18px -1px rgba(0, 0, 0, 0.76);
+  box-shadow: 1px 6px 18px -1px rgba(0, 0, 0, 0.76);
+  overflow-y: auto;
+}
+
+.space::marker {
+    content: none;
+  }

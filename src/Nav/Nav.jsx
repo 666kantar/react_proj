@@ -18,7 +18,9 @@ function Nav(props) {
     location.pathname === "/me" ||
     location.pathname === "/settings" ||
     location.pathname === "/payment" ||
-    location.pathname === "/admin";
+    location.pathname === "/modal" ||
+    location.pathname === "/admin" ||
+    location.pathname === "/Admin";
   const isAccount =
     location.pathname === "/me" || location.pathname === "/settings";
   const navigate = useNavigate();

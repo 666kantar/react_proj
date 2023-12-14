@@ -28,7 +28,7 @@ function Main() {
     streetNumber: "",
     street: "",
     city: "",
-    provinceS: "",
+    province: "",
     zipcode: "",
     totalPrice: "",
     comment: "",

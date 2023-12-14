@@ -32,7 +32,7 @@ export default function Payment(props) {
  set(distance, {newNum: newNum})};
 
 
-  function writeUserData(firstName, lastName, phone, email, full, apartment, streetNumber, street, city, provinceS, zipcode, totalPrice, comment) {
+  function writeUserData(firstName, lastName, phone, email, full, apartment, streetNumber, street, city, province, zipcode, totalPrice, comment) {
     const currentDate = new Date()
 
     const sanitizedEmail = formData.email.replace(/\./g, "-");
@@ -77,7 +77,7 @@ export default function Payment(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
     handleButtonClick();
-    writeUserData(formData.firstName, formData.lastName, formData.phone, formData.email, formData.full, formData.apartment, formData.streetNumber, formData.street, formData.city, formData.provinceS, formData.zipcode, formData.totalPrice, formData.comment)
+    writeUserData(formData.firstName, formData.lastName, formData.phone, formData.email, formData.full, formData.apartment, formData.streetNumber, formData.street, formData.city, formData.province, formData.zipcode, formData.totalPrice, formData.comment)
     newOrderNo(newNum)
   };
 

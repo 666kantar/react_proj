@@ -162,10 +162,10 @@ const Checkout = (props) => {
               <div className="formgroup">
                 <input
                   type="text"
-                  name="provinceS"
+                  name="province"
                   className="form-control"
                   placeholder="Province" 
-                  value={formData.provinceS}
+                  value={formData.province}
                   onChange={handleChange}
                   required
                 />

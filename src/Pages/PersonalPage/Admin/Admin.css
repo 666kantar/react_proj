@@ -37,3 +37,30 @@
     margin: 1em 12em 0 12em;
     justify-content: space-between;
 }
+
+.modal{
+    position: absolute;
+    margin: -5% 10%;
+    width: 80vw;
+    height: 80vh;
+    z-index: 11;
+    padding: 2em;
+    background-color: rgb(250, 250, 250);
+    border-radius: 20px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Затемнення з чорним коліром та прозорістю 50% */
+    z-index: 10; /* Знаходиться позаду модального вікна, але перед контентом */
+  }
+
+  .closeBut{
+    float: right;
+    font-size: 1.5em;
+    cursor: pointer;
+  }
