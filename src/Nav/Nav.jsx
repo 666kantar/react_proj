@@ -76,9 +76,9 @@ function Nav(props) {
           onClick={() => setCartOpen((cartOpen = !cartOpen))}
           className={`shopCartButton ${cartOpen && "active"}`}
         />
-        <Link to={"/admin"} className="admin">
+        <a href={"/admin"} className="admin">
           Admin Panel
-        </Link>
+        </a>
 
         <div onClick={handleLogout} className="navLogout">
           Logout
