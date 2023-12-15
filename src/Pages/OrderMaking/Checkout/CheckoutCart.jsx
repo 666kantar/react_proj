@@ -19,7 +19,7 @@ export default function CheckoutCart(props) {
 
             {cartItems.map((item) => (
               <div key={item.id} alt="" className="checkItems">
-                <img src={item.img} className="imgCol" alt="" />
+                <img src={item.img} className="imgShop" alt="" />
                 <div className="basketFlex">
                   <div className="itemsTitle">{item.title}</div>
                   <div className="itemsTitle">

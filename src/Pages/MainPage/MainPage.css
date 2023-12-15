@@ -3,10 +3,7 @@
 
     .main {
         background: url("https://images.freecreatives.com/wp-content/uploads/2015/04/14573-dark-wood-1680x1050-abstract-wallpaper1.jpg");
-    
         clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 90%);
-    
-    
         background-repeat: no-repeat;
         background-size: cover;    
         margin-top: -0.5px;    
@@ -43,7 +40,7 @@
                     max-width: 95vw;
                     max-height: 95vw;
                     border-radius: 50%;
-                    transform: rotate(9deg);
+                    
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -57,6 +54,7 @@
                         width: 120%;
                         max-width: 95vw;
                         filter: drop-shadow(21px 16px 23px black) invert(0%);
+                        transform: rotate(9deg);
                     } 
     
                 .mainBuy{
@@ -118,7 +116,8 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 50px;
+        padding: 3em;
+        max-width: 100%;
         }
         
         .info {
@@ -129,20 +128,20 @@
         }
         
         .infoIcon {
-        width: 50px;
-        height: 50px;
+        width: 3em;
+        height: 3em;
         }
         
         .infoTitle {
-        font-size: 20px;
+        font-size: 1.3em;
         font-weight: 600;
-        margin: 20px;
+        margin: 1.3em;
         }
         
         .infoDesc {
         color: gray;
         width: 50%;
-        height: 100px;
+        height: 6em;
         }
 
         

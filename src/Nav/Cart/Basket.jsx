@@ -2,13 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export default function Basket(props) {
-  const { cartItems, onAdd, onRemove, totalPrice} = props;
+  const { cartItems, onAdd, onRemove, totalPrice, closeCart} = props;
   
   // const taxPrice = itemsPrice * 0.14;
  //+ taxPrice;
   
   return (
     <>
+    <div className="blockX"><div className="x" onClick={closeCart}>X</div></div>
       <h2>Cart Items</h2>
       <div>
         {cartItems.length === 0 && <div>Cart is empty</div>}

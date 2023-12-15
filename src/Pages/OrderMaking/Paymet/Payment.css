@@ -48,10 +48,10 @@
 
 .part {
   flex: 1;
-  width: 1em;
+  width: 5em;
   height: 2em;
   text-align: center;
-  max-width: 10vw;
+  max-width: 6vw;
 }
 
 .fullName {
@@ -61,6 +61,7 @@
   flex-direction: row;
   align-items: center;
   gap: 0.3em;
+  flex-wrap: wrap;
 }
 
 .textName {
@@ -86,9 +87,11 @@
 }
 
 .expirePart {
+  flex: 1;
   width: 3em;
   height: 2em;
   text-align: center;
+  max-width: 6vw;
 }
 
 .modalPage{

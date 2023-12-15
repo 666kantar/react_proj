@@ -22,6 +22,8 @@
 .basket{
     color: black;
     padding: 0 1em;    
+    max-height: 70vh;
+    overflow-x: auto; 
 }
 
 .row{
@@ -70,3 +72,5 @@
                 color: black;
        
 }
+
+.x{display: none;}

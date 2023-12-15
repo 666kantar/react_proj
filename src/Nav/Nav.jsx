@@ -92,6 +92,7 @@ function Nav(props) {
             onAdd={onAdd}
             onRemove={onRemove}
             totalPrice={totalPrice}
+            closeCart={closeCart}
           />
         )}
       </div>

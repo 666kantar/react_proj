@@ -131,7 +131,7 @@ export default function Payment(props) {
                     <div className="cvv">
                       <div className="textCvv">cvv</div>
                       <input
-                        type="text"
+                        type="tel"
                         name="cvv"
                         className="part"
                         placeholder="123"
@@ -146,7 +146,7 @@ export default function Payment(props) {
                     <div className="number">
                       <div className="partsOfNumber">
                         <input
-                          type="text"
+                          type="tel"
                           name="firstPart"
                           className="part"
                           placeholder="4000"
@@ -158,7 +158,7 @@ export default function Payment(props) {
                         />
 
                         <input
-                          type="text"
+                          type="tel"
                           name="secondPart"
                           className="part"
                           placeholder="1234"
@@ -170,7 +170,7 @@ export default function Payment(props) {
                         />
 
                         <input
-                          type="text"
+                          type="tel"
                           name="thirdPart"
                           className="part"
                           placeholder="5678"
@@ -182,7 +182,7 @@ export default function Payment(props) {
                         />
 
                         <input
-                          type="text"
+                          type="tel"
                           name="fourthPart"
                           className="part"
                           placeholder="9010"
@@ -197,7 +197,7 @@ export default function Payment(props) {
 
                     <div className="expireDate">
                       <input
-                        type="text"
+                        type="tel"
                         name="month"
                         className="expirePart"
                         placeholder="01"
@@ -209,7 +209,7 @@ export default function Payment(props) {
                       />
                       /
                       <input
-                        type="text"
+                        type="tel"
                         name="year"
                         className="expirePart"
                         placeholder="25"
@@ -222,7 +222,7 @@ export default function Payment(props) {
                     </div>
               
                     <div className="fullName">
-                      <div className="textName">Full Name</div>
+                      <div className="textName">Full Name:</div>
                       <input
                         type="text"
                         name="fullName"

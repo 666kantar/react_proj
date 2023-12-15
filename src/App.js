@@ -19,6 +19,9 @@ import Payment from "./Pages/OrderMaking/Paymet/Payment";
 import Settings from "./Pages/PersonalPage/Settings/Settings";
 import Modal from "./Pages/OrderMaking/Paymet/Modal/Modal";
 import Admin from "./Pages/PersonalPage/Admin/Admin";
+
+import "./Mobile/Mobile.css"
+
   
   const router = createBrowserRouter(
     createRoutesFromElements(

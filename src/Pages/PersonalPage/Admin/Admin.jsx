@@ -71,7 +71,8 @@ export default function Admin() {
     const [selectedOrder, setSelectedOrder] = useState(null);
 
     const handleOpenProduct = (orderNumber, settings) => {
-      setSelectedOrder({ orderNumber, settings });
+      setSelectedOrder({ orderNumber, settings })
+      window.scrollTo(0, 0);
     };
   
     const handleCloseProduct = () => {

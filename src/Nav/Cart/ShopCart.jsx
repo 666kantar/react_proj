@@ -9,7 +9,7 @@ import { auth } from "../../firebase";
 
 function ShopCart(props) {
   
-  const { cartItems, onAdd, onRemove, totalPrice } = props;
+  const { cartItems, onAdd, onRemove, totalPrice, closeCart } = props;
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
 
@@ -41,12 +41,14 @@ function ShopCart(props) {
 
   return (
     <div className="shopCart">
+      
       <div className="basket">
         <Basket
           cartItems={cartItems}
           onAdd={onAdd}
           onRemove={onRemove}
           totalPrice={totalPrice}
+          closeCart={closeCart}
         />
       </div>
       <div className="footerCart">

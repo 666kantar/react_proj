@@ -34,6 +34,7 @@
     justify-content: space-between;
     padding: 0.2em;
     margin-bottom: 1em;
+    flex-wrap: wrap;
 }
 
 .itemsTitle{
@@ -76,3 +77,8 @@
 .hidden {
     display: none;
   }
+
+.imgShop{
+    width: 14em;
+    height: 8em;
+}

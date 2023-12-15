@@ -39,7 +39,7 @@ function MainPage(props) {
                 <br />
                 CLASSIC
               </h1>
-              <a id="contact2" href="#product">
+              <a id="contact2" href="#add">
                 <button className="buyButton">BUY NOW!</button>
               </a>
             </div>
@@ -58,7 +58,7 @@ function MainPage(props) {
                 <br />
                 MUG
               </h1>
-              <a id="contact2" href="#product">
+              <a id="contact2" href="#add">
                 <button className="buyButton">BUY NOW!</button>
               </a>
             </div>
@@ -79,7 +79,7 @@ function MainPage(props) {
                 <br />
                 STYLE
               </h1>
-              <a id="contact2" href="#product">
+              <a id="contact2" href="#add">
                 <button className="buyButton">BUY NOW!</button>
               </a>
             </div>
@@ -126,7 +126,7 @@ function MainPage(props) {
               className="productImg"
             />
             <div className="productDetails">
-              <h1 className="productTitle">{products[0].title}</h1>
+              <h1 className="productTitle"  id="add">{products[0].title}</h1>
               <h2 className="productPrice">C$ {products[0].price}</h2>
               <p className="productDesc">{products[0].desc}</p>
               <ClasicColors />
@@ -141,7 +141,7 @@ function MainPage(props) {
               className="productImg"
             />
             <div className="productDetails">
-              <h1 className="productTitle">{products[1].title}</h1>
+              <h1 className="productTitle" id="add">{products[1].title}</h1>
               <h2 className="productPrice">{products[1].price}</h2>
               <p className="productDesc">{products[1].desc}
               </p>
@@ -158,7 +158,7 @@ function MainPage(props) {
               className="productImg"
             />
             <div className="productDetails">
-              <h1 className="productTitle">{products[2].title}</h1>
+              <h1 className="productTitle"  id="add">{products[2].title}</h1>
               <h2 className="productPrice">{products[2].price}</h2>
               <p className="productDesc">{products[2].desc}
               </p>
