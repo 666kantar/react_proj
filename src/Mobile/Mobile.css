@@ -325,7 +325,7 @@ margin: 1em;
 box-shadow: -1px 3px 5px 0px rgba(0, 0, 0, 0.76);
 padding: 0.5em;}
 
-}
+
 
 
 /* footer */
@@ -336,4 +336,6 @@ padding: 0.5em;}
 
 .copyright{
   font-size: 0.5em;
+}
+
 }
