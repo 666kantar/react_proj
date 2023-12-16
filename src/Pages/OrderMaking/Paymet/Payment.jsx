@@ -26,9 +26,10 @@ export default function Payment(props) {
   let newNum = parseInt(orderNo) + 1;
 
 
-  function newOrderNo(newNum){
-    const distance = ref(db, "order_no/");
- set(distance, {newNum: newNum})};
+async function newOrderNo(newNum){
+  const distance = ref(db, "order_no/");
+  await set(distance, {newNum: newNum});
+}
 
 
   function writeUserData(firstName, lastName, phone, email, full, apartment, streetNumber, street, city, province, zipcode, totalPrice, comment) {

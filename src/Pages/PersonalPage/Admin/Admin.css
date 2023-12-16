@@ -64,3 +64,7 @@
     font-size: 1.5em;
     cursor: pointer;
   }
+
+  .noScroll {
+    overflow: hidden;
+  }

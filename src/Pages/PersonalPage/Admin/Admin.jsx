@@ -72,11 +72,13 @@ export default function Admin() {
 
     const handleOpenProduct = (orderNumber, settings) => {
       setSelectedOrder({ orderNumber, settings })
+      document.body.classList.add("noScroll");
       window.scrollTo(0, 0);
     };
   
     const handleCloseProduct = () => {
       setSelectedOrder(null);
+      document.body.classList.remove("noScroll")
     };
 
   return (
