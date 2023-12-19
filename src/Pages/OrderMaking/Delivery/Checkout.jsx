@@ -116,7 +116,6 @@ const Checkout = (props) => {
                   placeholder="Apartment"
                   value={formData.apartment}
                   onChange={handleChange}
-                  required
                 />
               </div>
 

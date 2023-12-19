@@ -12,6 +12,7 @@
 
 .orders_1{
     grid-area: 1 / 1 / 2 / 2; 
+    cursor: pointer;
 }
 
 .orders_2{
