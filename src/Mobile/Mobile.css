@@ -347,6 +347,7 @@ padding: 0.5em;}
   font-size: 4em;
 }
 
-.checkTitle{
-  font-size: 2em;
+.formCheckCart .checkTitle{
+  font-size: 3em;
+  text-align: center;
 }
