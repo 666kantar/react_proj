@@ -23,10 +23,11 @@ function Nav(props) {
     location.pathname === "/admin" ||
     location.pathname === "/Admin";
   const isAccount =
-    location.pathname === "/me" || location.pathname === "/settings"  || location.pathname === "/admin";
+    location.pathname === "/me" ||
+    location.pathname === "/settings" ||
+    location.pathname === "/admin";
   const navigate = useNavigate();
   const isAdmin = useCheckAdmin();
-
 
   let [cartOpen, setCartOpen] = useState(false);
 
@@ -44,18 +45,16 @@ function Nav(props) {
     document.body.classList.remove("overflow-hidden");
   };
 
-  
   const handleLogout = () => {
     signOut(auth)
       .then(() => {
         navigate("/");
-        window.location.reload()
+        window.location.reload();
       })
       .catch((error) => {
         console.log(error);
       });
   };
-  
 
   return (
     <>

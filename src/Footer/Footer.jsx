@@ -11,18 +11,18 @@ function Footer() {
             <li className="flItem">
               <Link to="/company">Company</Link>
             </li>
-            <li className="flItem"><Link to="/contact">Contact</Link></li>
+            <li className="flItem">
+              <Link to="/contact">Contact</Link>
+            </li>
           </ul>
         </div>
         <div className="flMenu">
           <h1 className="fMenuTitle">Useful Links</h1>
           <ul className="fList">
             <li className="flItem">Shipping</li>
-
           </ul>
         </div>
         <div className="footerRight">
-
           <div className="frMenu">
             <span className="copyright">
               @Kantar's MM Dreams. All rights reserved. 2023.

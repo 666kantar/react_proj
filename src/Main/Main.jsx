@@ -34,11 +34,9 @@ function Main() {
     comment: "",
   });
 
-
   const onAdd = (product) => {
     const exist = cartItems.find((x) => x.id === product.id);
 
-    
     if (exist) {
       setCartItems(
         cartItems.map((x) =>
@@ -62,33 +60,50 @@ function Main() {
     }
   };
 
-  
   useEffect(() => {
     setTotalPrice(itemsPrice);
   }, [itemsPrice]);
 
- useEffect(() => {
-      setOrder({items: cartItems, totalPrice: totalPrice.toFixed(2)})
+  useEffect(() => {
+    setOrder({ items: cartItems, totalPrice: totalPrice.toFixed(2) });
+  }, [cartItems, totalPrice]);
 
- },  [cartItems, totalPrice]);
-
- useEffect(() => {
-  const unsubscribe = onAuthStateChanged(auth, (user) => {
-    if (user) {
-      const userEmail = user.email;
-      setEmail(userEmail);
-    } else {
-      setEmail("");
-    }
-  });
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const userEmail = user.email;
+        setEmail(userEmail);
+      } else {
+        setEmail("");
+      }
+    });
 
     return () => unsubscribe();
-}, []);
+  }, []);
 
   return (
     <>
-      <Nav cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} totalPrice={totalPrice}/>
-      <Outlet context={[products, onAdd, cartItems, totalPrice, onRemove, formData, setFormData, order, email, setEmail, setCartItems]} />
+      <Nav
+        cartItems={cartItems}
+        onAdd={onAdd}
+        onRemove={onRemove}
+        totalPrice={totalPrice}
+      />
+      <Outlet
+        context={[
+          products,
+          onAdd,
+          cartItems,
+          totalPrice,
+          onRemove,
+          formData,
+          setFormData,
+          order,
+          email,
+          setEmail,
+          setCartItems,
+        ]}
+      />
       <ScrollToTop />
       <Footer />
     </>

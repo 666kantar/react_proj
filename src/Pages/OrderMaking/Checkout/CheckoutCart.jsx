@@ -5,9 +5,6 @@ import "./CheckoutCart.css";
 export default function CheckoutCart(props) {
   const [, onAdd, cartItems, totalPrice, onRemove] = useOutletContext();
 
-
-
-
   return (
     <div className="bodyCheck">
       <div className="checkPage">
@@ -32,7 +29,10 @@ export default function CheckoutCart(props) {
                   </div>
                 </div>
 
-                <div className="col-2 text-right" style={{ fontSize: "1.6rem" }} >
+                <div
+                  className="col-2 text-right"
+                  style={{ fontSize: "1.6rem" }}
+                >
                   {item.qty} x ${item.price.toFixed(2)}
                 </div>
               </div>
@@ -56,7 +56,8 @@ export default function CheckoutCart(props) {
 
           <Link
             to="/checkout"
-            className={`checkout ${cartItems.length === 0 ? "hidden" : ""}`}>
+            className={`checkout ${cartItems.length === 0 ? "hidden" : ""}`}
+          >
             Place Order
           </Link>
         </div>
