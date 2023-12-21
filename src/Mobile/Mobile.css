@@ -13,6 +13,18 @@
     max-width: 11vw;
   }
 
+  .qty {
+  min-width: 4vw;
+  height: 4vw;
+  border-radius: 50px;
+  line-height: 4vw;
+  left: auto;
+  top: 0;
+  font-size: 3vw;
+  z-index: 10;
+  right: 0;
+  }
+
   /* MainPage */
   .main .slider {
     display: none;

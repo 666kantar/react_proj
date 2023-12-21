@@ -69,12 +69,20 @@ function Nav(props) {
           <div className="menuItem">YOUR STYLE</div>
         </div>
 
-        <img
-          src="./img/basket.png"
-          alt="basket"
-          onClick={() => setCartOpen((cartOpen = !cartOpen))}
-          className={`shopCartButton ${cartOpen && "active"}`}
-        />
+        <div className={`basketN ${cartOpen && "active"}`} onClick={() => setCartOpen((cartOpen = !cartOpen))}>
+          <img
+            src="./img/basket.png"
+            alt="basket"
+            
+            className={`shopCartButton ${cartOpen && "active"}`}
+          />
+          {cartItems.length !== 0 && (
+            <div className="qty">
+              {cartItems.reduce((totalQty, item) => totalQty + item.qty, 0)}
+            </div>
+          )}
+        </div>
+
         <a href={"/admin"} className="admin">
           Admin Panel
         </a>
